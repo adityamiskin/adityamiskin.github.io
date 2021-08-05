@@ -25,14 +25,13 @@ var form = document.querySelector('.pageclip-form');
 Pageclip.form(form, {
   onSubmit: function (event) {},
   onResponse: function (error, response) {},
-  successTemplate: '<span>Thank you!</span>'
+  successTemplate: '<span>Works!!!</span>'
 });
 
 // const contactName = $('#contactName');
 // const contactEmail = $('#contactEmail');
 // const contactSubject = $('#contactSubject');
 // const contactMessage = $('#contactMessage');
-
 
 // var data = {
 //   name: contactName,
