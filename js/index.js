@@ -28,23 +28,23 @@ Pageclip.form(form, {
   successTemplate: '<span>Works!!!</span>'
 });
 
-// const contactName = $('#contactName');
-// const contactEmail = $('#contactEmail');
-// const contactSubject = $('#contactSubject');
-// const contactMessage = $('#contactMessage');
+const contactName = $('#contactName');
+const contactEmail = $('#contactEmail');
+const contactSubject = $('#contactSubject');
+const contactMessage = $('#contactMessage');
 
-// var data = {
-//   name: contactName,
-//   email: contactEmail,
-//   subject: contactSubject,
-//   message: contactMessage
-// };
+var data = {
+  contactName: contactName,
+  contactEmail: contactEmail,
+  contactSubject: contactSubject,
+  contactMessage: contactMessage
+};
 
-// Pageclip.send(
-//   'api_3wQ69yM1RPPLtCchAaSzaCU5P7OV9hKg',
-//   'contactForm',
-//   data,
-//   function (error, response) {
-//     console.log('saved?', !!error, '; response:', error || response);
-//   }
-// );
+Pageclip.send(
+  'api_3wQ69yM1RPPLtCchAaSzaCU5P7OV9hKg',
+  'contactForm',
+  data,
+  function (error, response) {
+    console.log(response);
+  }
+);
