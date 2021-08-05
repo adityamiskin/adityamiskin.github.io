@@ -20,67 +20,32 @@ const scrollFunc = () => {
 
 window.addEventListener('scroll', scrollFunc);
 
-// (function ($) {
-//   'use strict';
+var form = document.querySelector('.pageclip-form');
 
-//   var ssContactForm = function () {
-//     /* local validation */
-//     $('#contactForm').validate({
-//       /* submit via ajax */
-//       submitHandler: function (form) {
-//         $.ajax({
-//           type: 'POST',
-//           url: 'inc/sendEmail.php',
-//           data: $(form).serialize(),
-//           success: function (msg) {
-//             // Message was sent
-//             if (msg == 'OK') {
-//               setTimeout(function () {
-//                 $('#exampleModal').modal('show');
-//                 confetti({
-//                   zIndex: 2000,
-//                   particleCount: 100,
-//                   spread: 160
-//                 });
-//                 document.getElementById('contactForm').reset();
-//               }, 1000);
+Pageclip.form(form, {
+  onSubmit: function (event) {},
+  onResponse: function (error, response) {},
+  successTemplate: '<span>Thank you!</span>'
+});
 
-//               setTimeout(function () {
-//                 $('#exampleModal').modal('hide');
-//               }, 3000);
-//             }
-//             // There was an error
-//             else {
-//               document.getElementById('face').innerText = '☹️';
+// const contactName = $('#contactName');
+// const contactEmail = $('#contactEmail');
+// const contactSubject = $('#contactSubject');
+// const contactMessage = $('#contactMessage');
 
-//               document.getElementById('exampleModalLabel').innerText =
-//                 'There was some issue sending your message.';
 
-//               $('#exampleModal').modal('show');
+// var data = {
+//   name: contactName,
+//   email: contactEmail,
+//   subject: contactSubject,
+//   message: contactMessage
+// };
 
-//               setTimeout(function () {
-//                 $('#exampleModal').modal('hide');
-//               }, 2000);
-//             }
-//           },
-//           error: function () {
-//             document.getElementById('face').innerText = '☹️';
-
-//             document.getElementById('exampleModalLabel').innerText =
-//               'There was some issue sending your message.';
-
-//             $('#exampleModal').modal('show');
-
-//             setTimeout(function () {
-//               $('#exampleModal').modal('hide');
-//             }, 2000);
-//           }
-//         });
-//       }
-//     });
-//   };
-
-//   (function ssInit() {
-//     ssContactForm();
-//   })();
-// })(jQuery);
+// Pageclip.send(
+//   'api_3wQ69yM1RPPLtCchAaSzaCU5P7OV9hKg',
+//   'contactForm',
+//   data,
+//   function (error, response) {
+//     console.log('saved?', !!error, '; response:', error || response);
+//   }
+// );
