@@ -36,6 +36,7 @@
   <!--=========================== EXTRAS ===========================-->
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js" defer></script>
+  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
   <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" async>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" async></script> -->
 
@@ -310,14 +311,16 @@
         <h2 class="contact-title">CONTACT ME</h2>
       </div>
       <div class="contact-list">
-        <form id="contactForm" action="sendEmail.php" method="POST">
+        <form id="contactForm" action="https://send.pageclip.co/jNqC3x6bLlvMSbMCKGWd0dHbySLzWGBf/contactForm"
+          name="contactForm" method="POST" class="pageclip-form">
+          <!-- <input type="hidden" name="contactForm" value="Contact Form" /> -->
           <input type="text" id="contactName" name="contactName" placeholder="Name" required />
-          <input type="email" placeholder="Email Address" name="contactEmail" id="contactEmail" required />
-          <input type="text" placeholder="Subject" id="contactSubject" name="contactSubject" required />
-          <textarea placeholder="Your message" id="contactMessage" type="text" name="contactMessage"
+          <input type="email" id="contactEmail" name="contactEmail" placeholder="Email Address" required />
+          <input type="text" id="contactSubject" name="contactSubject" placeholder="Subject" required />
+          <textarea type="text" id="contactMessage" name="contactMessage" placeholder="Your message"
             required></textarea>
           <div class="center">
-            <button type="submit" class="form-submit-button" id="submit-btn" name="submit-form">
+            <button type="submit" class="form-submit-button pageclip-form__submit" id="submit-btn" name="submit-form">
               Send Message
             </button>
           </div>
@@ -372,7 +375,7 @@
     </section>
 
   </main>
-
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 </body>
 
 </html>
