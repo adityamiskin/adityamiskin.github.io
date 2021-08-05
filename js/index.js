@@ -45,6 +45,18 @@ Pageclip.send(
   'contactForm',
   data,
   function (error, response) {
-    console.log(response);
+    setTimeout(function () {
+      $('#exampleModal').modal('show');
+      confetti({
+        zIndex: 2000,
+        particleCount: 100,
+        spread: 160
+      });
+      document.getElementById('contactForm').reset();
+    }, 1000);
+
+    setTimeout(function () {
+      $('#exampleModal').modal('hide');
+    }, 3000);
   }
 );
