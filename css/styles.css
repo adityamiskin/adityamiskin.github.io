@@ -1,24 +1,12 @@
 @font-face {
   font-family: 'Gotham XLight';
-  src: url("/fonts/Gotham-XLight.woff2") format("woff2"), url("/fonts/Gotham-XLight.woff") format("woff"), url("/fonts/Gotham-XLight.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'FranklinGothicURWDem';
-  src: url("/fonts/FranklinGothicURW-Dem.woff2") format("woff2"), url("/fonts/FranklinGothicURW-Dem.woff") format("woff"), url("/fonts/FranklinGothicURW-Dem.ttf") format("truetype");
+  src: url("../fonts/Gotham-XLight.woff2") format("woff2"), url("../fonts/Gotham-XLight.woff") format("woff"), url("../fonts/Gotham-XLight.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Utopia Std Display';
-  src: url("/fonts/UtopiaStd-Disp.woff2") format("woff2"), url("/fonts/UtopiaStd-Disp.woff") format("woff"), url("/fonts/UtopiaStd-Disp.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Bazar';
-  src: url("/fonts/Bazar.woff2") format("woff2"), url("/fonts/Bazar.woff") format("woff"), url("/fonts/Bazar.ttf") format("truetype");
+  src: url("../fonts/UtopiaStd-Disp.woff2") format("woff2"), url("../fonts/UtopiaStd-Disp.woff") format("woff"), url("../fonts/UtopiaStd-Disp.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -32,26 +20,13 @@ html {
 }
 
 body {
-  font-family: 'franklin-gothic', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  padding-top: 58px;
   background-color: #f9efe7;
   width: 100%;
   height: 100%;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    padding-top: 60px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  body {
-    padding-top: 60px;
-  }
 }
 
 .center {
@@ -68,6 +43,7 @@ body {
 
 .section-title-main {
   font-size: 1.6rem;
+  font-weight: bold;
   line-height: 1.875;
   margin-bottom: 0.3rem;
   letter-spacing: 0.4rem;
@@ -75,7 +51,7 @@ body {
 }
 
 .section-title-secondary {
-  font-family: 'gotham', serif;
+  font-family: 'Gotham XLight', serif;
   font-weight: 500;
   font-size: 3rem;
   color: #313131;
@@ -136,11 +112,12 @@ body {
 }
 
 .navbar {
-  border-bottom: 1px solid #666666;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .nav-link {
-  color: #c6c9cf;
+  color: #cfcfcf;
   text-decoration: none;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -154,9 +131,10 @@ body {
 }
 
 .transparent {
-  background: rgba(29, 29, 31, 0.72);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(88, 88, 88, 0.72);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 1px solid #666666;
 }
 
 .container-fluid {
@@ -192,7 +170,7 @@ ul {
 
 .navbar-brand {
   text-decoration: none;
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Gotham XLight', sans-serif;
   color: white;
   margin: 0;
   padding-left: 15px;
@@ -222,18 +200,26 @@ ul {
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
-  display: table;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-right: 0;
   padding-left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about-btn {
   text-decoration: none;
   color: black;
   background: rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(146, 146, 148, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(146, 146, 148, 0.37);
+  color: white;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.37);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
   border-radius: 5px;
@@ -287,17 +273,10 @@ ul {
 }
 
 .intro-content {
-  display: table-cell;
-  vertical-align: middle;
   text-align: center;
   font-size: 2.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding: 1rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin: 0 auto;
 }
 
 .intro-social {
@@ -313,7 +292,7 @@ ul {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 10rem;
+  bottom: 4rem;
   margin: 0;
   padding: 0;
 }
@@ -629,16 +608,8 @@ ul {
   }
 }
 
-.contact-title {
-  font-size: 3rem;
-  line-height: 1.875;
-  margin-bottom: 2rem;
-  letter-spacing: 0.4rem;
-  text-align: center;
-  position: relative;
-  font-family: 'Bazar', sans-serif;
+.contact {
   color: white;
-  font-weight: 100;
 }
 
 .contact-list {
@@ -739,7 +710,7 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Bazar', sans-serif;
+  font-family: 'franklin-gothic', sans-serif;
   color: white;
   margin-bottom: 1rem;
 }

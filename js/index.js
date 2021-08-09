@@ -20,6 +20,11 @@ const scrollFunc = () => {
 
 window.addEventListener('scroll', scrollFunc);
 
+// window.addEventListener('scroll', () => {
+//   var nav = document.querySelector('.navbar');
+//   nav.classList.toggle('transparent', window.scrollY > 200);
+// });
+
 var form = document.querySelector('.pageclip-form');
 
 Pageclip.form(form, {
