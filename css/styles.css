@@ -443,6 +443,10 @@ ul {
   height: 20px;
 }
 
+.carousel-item {
+  height: 20rem;
+}
+
 .carousel-item i {
   display: -webkit-box;
   display: -ms-flexbox;
