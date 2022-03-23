@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>ADITYA MISKIN</title>
+  <title>Aditya Miskin</title>
 
   <!--=========================== BOOTSTRAP ===========================-->
 
@@ -22,8 +22,9 @@
   <!--=========================== FONTS ===========================-->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" defer>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin defer>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" defer>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
   <!--=========================== ICONS ===========================-->
 
@@ -40,10 +41,8 @@
 
   <!--=========================== EXTRAS ===========================-->
 
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js" defer></script>
-  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8" defer></script>
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" async>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" async></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js" defer></script>
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8" defer></script> -->
 
   <style>
     body {
@@ -56,13 +55,17 @@
 
 </head>
 
-<body onload="document.body.style.opacity='1'">
+<body onload="document.body.style.opacity='1'" style="margin: 0 !important">
 
   <!--=========================== HEADER ===========================-->
 
   <nav class="navbar navbar-expand-md fixed-top transparent">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" id="top-link">ADITYA MISKIN</a>
+      <div class="navbar-brand">
+        <img src="./images/footprint-dark.png" alt="Dark Footprint" width="25px" height="auto" />
+        <a href="#" id="top-link">ADITYA MISKIN</a>
+      </div>
+
       <i class="bi bi-list navbar-toggler" style="font-size: 2rem; color: white" type="button" id="menu-open"
         data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation"></i>
@@ -83,9 +86,9 @@
             <a class="nav-link"
               href="https://drive.google.com/file/d/1pWOaCHl5ey2fIFpqLR5ptFaequt9MBAn/view?usp=sharing">Resume</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -96,7 +99,7 @@
   <main>
 
     <a href="#" id="floating-btn" title="Go to Top">
-      <i class="bi bi-arrow-up" style="font-size: 2.5rem"></i>
+      <i class="bi bi-arrow-up" style="font-size: 2rem"></i>
     </a>
 
     <!--=========================== INTRO ===========================-->
@@ -122,7 +125,7 @@
         </a>
         <!-- </div> -->
       </div>
-      <ul class=" intro-social">
+      <!-- <ul class=" intro-social">
         <li>
           <a href="https://github.com/adityamiskin" target="_blank" title="Github">
             <i class="bi bi-github"></i>
@@ -138,7 +141,7 @@
             <i class="bi bi-linkedin"></i>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </section>
 
     <!--=========================== ABOUT ===========================-->
@@ -146,12 +149,23 @@
     <section id="about">
       <div class="section-intro">
         <div class="col-12">
-          <h2 class="section-title-main">ABOUT</h2>
-          <h1 class="section-title-secondary">LET ME INTRODUCE MYSELF</h1>
+          <div class="test">
+            <p>Hello, I'm a full-stack developer based in India!</p>
+          </div>
+          <!-- <h2 class="section-title-main">ABOUT</h2>
+          <h1 class="section-title-secondary">LET ME INTRODUCE MYSELF</h1> -->
+          <div class="name">
+            <div>
+              <h2>Aditya Miskin</h2>
+              <p>Digital Craftsman ( Artist / Developer / Designer )</p>
+            </div>
+
+            <img src="/images/aditya.jpg" alt="Profile Pic" class="profile-img" />
+          </div>
+          <h3>About</h3>
           <div class="intro-info">
-            <img src="/images/profile-pic.webp" alt="Profile Pic" class="profile-img" />
             <p class="lead">
-              I am Aditya Miskin. Ever since I wrote my first line of code, I knew that I wanted to become a programmer.
+              Ever since I wrote my first line of code, I knew that I wanted to become a programmer.
               There is nothing like that "💡" moment where you finally get to the solution which has been staring at you
               for the past 3 hrs.
 
@@ -165,6 +179,54 @@
               to learn something new and improve upon it.
             </p>
           </div>
+          <h3>On the Web</h3>
+          <div>
+            <ul class="contact-social center-block">
+              <a href="https://github.com/adityamiskin" target="_blank" title="Github">
+                <div>
+                  <li class="hover-effect">
+                    <i class="bi bi-github">
+                    </i>
+                  </li>
+                  <p>@adityamiskin</p>
+                </div>
+              </a>
+              <a href="https://twitter.com/AdityaMiskin3" target="_blank" title="Github">
+                <div>
+                  <li class="hover-effect">
+                    <i class="bi bi-twitter">
+                    </i>
+                  </li>
+                  <p>@AdityaMiskin3</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/aditya-miskin/" target="_blank" title="Github">
+                <div>
+                  <li class="hover-effect">
+                    <i class="bi bi-linkedin">
+                    </i>
+                  </li>
+                  <p>@aditya-miskin</p>
+                </div>
+              </a>
+              <a href="https://www.instagram.com/aditya__miskin/" target="_blank" title="Github">
+                <div>
+                  <li class="hover-effect">
+                    <i class="bi bi-instagram">
+                    </i>
+                  </li>
+                  <p>@aditya__miskin</p>
+                </div>
+              </a>
+            </ul>
+          </div>
+          <h3>I <img src="./images/heart.svg" alt="" width="30px" height="30px"></h3>
+          <!-- <div class="intro-info"> -->
+          <p class="lead">
+            Art🖼️, Music🎵, Drawing🎨, Gaming🎮, Photography📸
+          </p>
+          <!-- </div> -->
+
         </div>
       </div>
     </section>
@@ -247,7 +309,39 @@
         <h2 class="section-title-main">PROJECTS</h2>
         <h1 class="section-title-secondary">SOME OF MY WORK</h1>
       </div>
-      <div class="container">
+      <div class="grid">
+        <a href="https://github.com/adityamiskin/Harmony" class="no-style" target="blank">
+          <div class="grid-item">
+            <img src="/images/bot.webp" alt="project-img" class="project-img" height="150px" width="230px" />
+            <p class="project-head">Harmony-Bot</p>
+            <p class="project-desc">A Discord Bot made with discord.js</p>
+          </div>
+        </a>
+        <a href="https://github.com/adityamiskin/Note-keeper" class="no-style" target="blank">
+          <div class="grid-item">
+
+            <img src="/images/Keeper2.webp" alt="project-img" class="project-img" height="150px" width="230px" />
+            <p class="project-head">Keeper</p>
+            <p class="project-desc">A Google Keep mock-up with some personal touch</p>
+          </div>
+        </a>
+        <a href="https://github.com/adityamiskin/Shortify-PERN" class="no-style" target="blank">
+          <div class="grid-item">
+            <img src="/images/Shortify2.webp" alt="project-img" class="project-img" height="150px" width="230px" />
+            <p class="project-head">Shortify</p>
+            <p class="project-desc">A URL shortener made with React, Node.js and PostgreSQL</p>
+          </div>
+        </a>
+        <a href="https://github.com/adityamiskin/MNIST-Digit-Recognizer" class="no-style" target="blank">
+          <div class="grid-item">
+            <img src="/images/mnist-digit.webp" alt="project-img" class="project-img" height="150px" width="230px" />
+            <p class="project-head">Mnist Digit Recognizer</p>
+            <p class="project-desc">A ML model to recognize hand-written digits</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- <div class="container">
         <div class="row d-inline-flex">
           <div class="col-md relative">
             <img src="/images/bot.webp" alt="project-img" class="project-img" height="400px" />
@@ -304,20 +398,19 @@
           </div>
 
         </div>
-      </div>
+      </div> -->
     </section>
 
     <!--=========================== CONTACT ===========================-->
 
-    <section id="contact">
-      <div>
+    <!-- <section id="contact"> -->
+    <!-- <div>
         <h2 class="section-title-main contact">CONTACT</h2>
         <h1 class="section-title-secondary contact">LET'S TALK</h1>
       </div>
       <div class="contact-list">
         <form id="contactForm" action="https://send.pageclip.co/jNqC3x6bLlvMSbMCKGWd0dHbySLzWGBf/contactForm"
           name="contactForm" method="POST" class="pageclip-form">
-          <!-- <input type="hidden" name="contactForm" value="Contact Form" /> -->
           <input type="text" id="contactName" name="contactName" placeholder="Name" required />
           <input type="email" id="contactEmail" name="contactEmail" placeholder="Email Address" required />
           <input type="text" id="contactSubject" name="contactSubject" placeholder="Subject" required />
@@ -350,9 +443,9 @@
           <br />
           - Alan Turing
         </h1>
-      </div>
-      <hr class="line" />
-      <div>
+      </div> -->
+    <!-- <hr class="line" /> -->
+    <!-- <div>
         <ul class="contact-social center-block">
           <li class="hover-effect">
             <a href="https://github.com/adityamiskin" target="_blank" title="Github">
@@ -376,8 +469,10 @@
           </li>
         </ul>
       </div>
-    </section>
-
+    </section> -->
+    <footer style="opacity: 0.4; text-align: center; margin-bottom: 20px;">&copy; <span id="date"></span> Aditya Miskin.
+      All Rights Reserved.
+    </footer>
   </main>
 </body>
 
