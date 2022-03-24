@@ -297,11 +297,11 @@ ul {
 // < !--============================================ ABOUT ============================================-->
 
 #about {
-	padding-top: 9rem;
+	padding-top: 9rem 1rem 0 1rem;
 	margin: 0 auto;
 	max-width: 80ch;
 	@media only screen and (max-width: 768px) {
-		padding-top: 4rem;
+		padding: 4rem 1rem 0 1rem;
 	}
 	h3 {
 		font-size: 20px;
@@ -424,12 +424,12 @@ ul {
 // < !--============================================ SKILL ============================================-->
 
 #skill {
-	padding: 9rem 2rem 0 2rem;
+	padding: 9rem 1rem 0 1rem;
 	// margin: 0 20%;
 	margin: 0 auto;
 	max-width: 80ch;
 	@media only screen and (max-width: 768px) {
-		padding-top: 4rem;
+		padding: 4rem 1rem 0 1rem;
 	}
 	p {
 		font-size: 1rem;
@@ -506,11 +506,11 @@ ul {
 // < !--============================================ PROJECT ============================================-->
 
 #project {
-	padding: 7rem 2rem 0 2rem;
+	padding: 7rem 1rem 0 1rem;
 	margin: 0 auto;
 	max-width: 80ch;
 	@media only screen and (max-width: 600px) {
-		padding-top: 4rem;
+		padding: 4rem 1rem 0 1rem;
 	}
 
 	margin-bottom: 2rem;
