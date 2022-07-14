@@ -9,7 +9,8 @@
   font-display: swap;
 }
 :root {
-  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  	sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 * {
@@ -227,7 +228,7 @@ ul {
 }
 
 #about {
-  padding: 9rem 1rem 0 1rem;
+  padding: 7rem 1rem 0 1rem;
   margin: 0 auto;
   max-width: 80ch;
 }
@@ -267,7 +268,7 @@ ul {
 .test {
   background-color: #f5f0e8;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .test p {
   padding: 20px 10px;
@@ -328,7 +329,6 @@ ul {
     margin-top: 1rem;
     display: block;
   }
-
   .intro-info img {
     height: auto;
     width: 10rem;
@@ -336,7 +336,6 @@ ul {
     display: inline-block;
     margin-bottom: 1rem;
   }
-
   .intro-info .lead {
     margin: 0 auto;
     text-align: justify;
@@ -559,7 +558,6 @@ ul {
   .section-title-main {
     font-size: 1.3rem;
   }
-
   .section-title-secondary {
     font-size: 2.5rem;
   }

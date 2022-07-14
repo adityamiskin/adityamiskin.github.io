@@ -1,19 +1,22 @@
 @font-face {
-	font-family: "Gotham XLight";
-	src: url("../fonts/Gotham-XLight.woff2") format("woff2"), url("../fonts/Gotham-XLight.woff") format("woff"),
-		url("../fonts/Gotham-XLight.ttf") format("truetype");
+	font-family: 'Gotham XLight';
+	src: url('../fonts/Gotham-XLight.woff2') format('woff2'),
+		url('../fonts/Gotham-XLight.woff') format('woff'),
+		url('../fonts/Gotham-XLight.ttf') format('truetype');
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Utopia Std Display";
-	src: url("../fonts/UtopiaStd-Disp.woff2") format("woff2"), url("../fonts/UtopiaStd-Disp.woff") format("woff"),
-		url("../fonts/UtopiaStd-Disp.ttf") format("truetype");
+	font-family: 'Utopia Std Display';
+	src: url('../fonts/UtopiaStd-Disp.woff2') format('woff2'),
+		url('../fonts/UtopiaStd-Disp.woff') format('woff'),
+		url('../fonts/UtopiaStd-Disp.ttf') format('truetype');
 	font-display: swap;
 }
 
 :root {
-	--body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--body-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 $github-color: rgb(124, 209, 244);
@@ -36,7 +39,7 @@ body {
 	width: 100%;
 	height: 100%;
 	transition: 0.25s;
-	font-feature-settings: "kern";
+	font-feature-settings: 'kern';
 	font-family: var(--body-font);
 }
 
@@ -56,7 +59,7 @@ body {
 }
 
 .section-title-secondary {
-	font-family: "Gotham XLight", serif;
+	font-family: 'Gotham XLight', serif;
 	font-weight: 500;
 	font-size: 3rem;
 	color: #313131;
@@ -110,7 +113,7 @@ body {
 
 .navbar-brand {
 	text-decoration: none;
-	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
 	color: white;
 	margin: 0;
 	font-size: 18px;
@@ -177,7 +180,7 @@ ul {
 // < !--============================================ INTRO ============================================-->
 
 #intro {
-	background-image: url("../images/landing-img.webp");
+	background-image: url('../images/landing-img.webp');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -226,7 +229,7 @@ ul {
 	line-height: 1.2em;
 	margin-bottom: 2rem;
 	margin-top: 2rem;
-	font-family: "Utopia Std Display", sans-serif;
+	font-family: 'Utopia Std Display', sans-serif;
 	font-weight: 400;
 	font-size: 3rem;
 	transition: 0.25s;
@@ -294,7 +297,7 @@ ul {
 // < !--============================================ ABOUT ============================================-->
 
 #about {
-	padding: 9rem 1rem 0 1rem;
+	padding: 7rem 1rem 0 1rem;
 	margin: 0 auto;
 	max-width: 80ch;
 	@media only screen and (max-width: 768px) {
@@ -307,7 +310,7 @@ ul {
 		text-underline-offset: 6px;
 		text-decoration-color: #525252;
 		text-decoration-thickness: 4px;
-		font-family: "M PLUS Rounded 1c", sans-serif;
+		font-family: 'M PLUS Rounded 1c', sans-serif;
 		font-weight: bold;
 		margin: 1rem 0;
 		img {
@@ -331,7 +334,7 @@ ul {
 .test {
 	background-color: #f5f0e8;
 	border-radius: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	p {
 		padding: 20px 10px;
 	}
@@ -355,7 +358,7 @@ ul {
 		text-align: left;
 		margin: 0;
 		font-size: 36px;
-		font-family: "M PLUS Rounded 1c", sans-serif;
+		font-family: 'M PLUS Rounded 1c', sans-serif;
 	}
 	p {
 		margin: 0;
@@ -769,7 +772,14 @@ ul {
 		}
 
 		.bi-instagram {
-			background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+			background: radial-gradient(
+				circle at 30% 107%,
+				#fdf497 0%,
+				#fdf497 5%,
+				#fd5949 45%,
+				#d6249f 60%,
+				#285aeb 90%
+			);
 			-webkit-background-clip: text;
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
