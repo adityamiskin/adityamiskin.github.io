@@ -1,5 +1,6 @@
 import '../assets/css/ProjectCard.css';
 import { useState } from 'react';
+import { ReactComponent as ArrowRightSvg } from '../assets/images/ArrowRight.svg';
 
 const ProjectCard = () => {
 	const projectDetails = [
@@ -97,15 +98,7 @@ const ProjectCard = () => {
 									onMouseLeave={(e) => handleMouseLeave(e, index)}
 									style={buttonStyles[index]}>
 									<div className='button-text'>Go to Github</div>
-									<img
-										src='https://uploads-ssl.webflow.com/5e1689facb9d5168c0dcbe0b/5fd4f3b57684da0e44ba39cb_ArrowRight.svg'
-										loading='lazy'
-										width='24'
-										height='24'
-										alt=''
-										className='button-icon ms-2'
-										style={buttonIconStyles[index]}
-									/>
+									<ArrowRightSvg className="button-icon ms-2" style={buttonIconStyles[index]} />
 								</button>
 							</div>
 							<img

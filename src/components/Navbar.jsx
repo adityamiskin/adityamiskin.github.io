@@ -5,6 +5,9 @@ import { MenuButton } from './MenuButton';
 import { useEffect, useState } from 'react';
 import { ReactComponent as SunSvg } from '../assets/images/sun.svg';
 import { ReactComponent as MoonSvg } from '../assets/images/moon.svg';
+import { ReactComponent as House } from '../assets/images/House.svg';
+import { ReactComponent as User } from '../assets/images/User.svg';
+import { ReactComponent as ArrowLeft } from '../assets/images/ArrowLeft.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, theme }) => {
@@ -88,25 +91,11 @@ const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, them
 						href='/'
 						aria-current='page'
 						className='menu-item flex p-4 rounded-lg open-current home-path'>
-						<img
-							src='https://uploads-ssl.webflow.com/5e1689facb9d5168c0dcbe0b/5fd51b0d34b9d09283ff00d2_House.svg'
-							loading='lazy'
-							width='24'
-							height='24'
-							alt=''
-							className='menu-item-icon'
-						/>
+						<House className='menu-item-icon' />
 						<div className='menu-item-text dark:text-white'>Home</div>
 					</a>
 					<a href='/about' className='menu-item flex p-4 rounded-lg about-path'>
-						<img
-							src='https://uploads-ssl.webflow.com/5e1689facb9d5168c0dcbe0b/5fd51b1353c1a180dbc8beb4_User.svg'
-							loading='lazy'
-							width='24'
-							height='24'
-							alt=''
-							className='menu-item-icon'
-						/>
+						<User className='menu-item-icon' />
 						<div className='menu-item-text dark:text-white'>About</div>
 					</a>
 				</motion.div>
@@ -183,13 +172,7 @@ const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, them
 						whileTap={{ scale: 0.95 }}
 						whileHover={{ scale: 0.9 }}
 						onClick={() => navigate('/')}>
-						<img
-							src='https://uploads-ssl.webflow.com/5e1689facb9d5168c0dcbe0b/5fd65af4e1ad8f10bcd72f7b_ArrowLeft.svg'
-							loading='lazy'
-							width='24'
-							height='24'
-							alt='Back Arrow'
-						/>
+						<ArrowLeft />
 					</motion.div>
 					<Menu closed={closed} isOpen={isOpen} />
 				</nav>

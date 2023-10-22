@@ -66,7 +66,7 @@ function App() {
 		<BrowserRouter basename='/'>
 			<Navbar toggleOnPlay={toggleOnPlay} toggleOnWork={toggleOnWork} toggleDirection={toggleDirection} toggleTheme={handleThemeChange} theme={theme} />
 			<Routes>
-				<Route path='/' element={<Home isWorkMode={isWorkMode} />} />
+				<Route path='/' element={<Home isWorkMode={isWorkMode} theme={theme} />} />
 				<Route path='/about' element={<About />} />
 			</Routes>
 			<Footer />
