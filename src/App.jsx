@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react';
 
 import './app.css';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Router, Route, Routes, BrowserRouter } from 'react-router-dom'
 
 function App() {
 
@@ -63,14 +63,14 @@ function App() {
 	};
 
 	return (
-		<HashRouter basename='/'>
+		<BrowserRouter basename='/'>
 			<Navbar toggleOnPlay={toggleOnPlay} toggleOnWork={toggleOnWork} toggleDirection={toggleDirection} toggleTheme={handleThemeChange} theme={theme} />
 			<Routes>
 				<Route path='/' element={<Home isWorkMode={isWorkMode} />} />
 				<Route path='/about' element={<About />} />
 			</Routes>
 			<Footer />
-		</HashRouter>
+		</BrowserRouter >
 	);
 }
 
