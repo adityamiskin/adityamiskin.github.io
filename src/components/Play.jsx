@@ -9,7 +9,7 @@ const Play = () => {
     .then(response => response.json())
     .then(data => {
       data.resources.forEach(element => {
-        gallery.push("https://res.cloudinary.com/vite-img/q_5/" + element.public_id)
+        gallery.push("https://res.cloudinary.com/vite-img/q_10/" + element.public_id)
       });
       setImages(gallery)
     });
