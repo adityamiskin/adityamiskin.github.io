@@ -9,7 +9,7 @@ const Play = () => {
     .then(response => response.json())
     .then(data => {
       data.resources.forEach(element => {
-        gallery.push("https://res.cloudinary.com/vite-img/" + element.public_id)
+        gallery.push("https://res.cloudinary.com/vite-img/q_5/" + element.public_id)
       });
       setImages(gallery)
     });
@@ -18,7 +18,6 @@ const Play = () => {
     <div>
       <div className="w-full p-4 pb-10 mx-auto mb-10 gap-3 columns-3 columns-3xs space-y-3 w-100 ">
         {images.map((image, index) => {
-          console.log(image)
           return (
             <div key={index} className="relative flex items-start w-100">
               <img
