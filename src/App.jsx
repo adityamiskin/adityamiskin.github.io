@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react';
 
 import './app.css';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
