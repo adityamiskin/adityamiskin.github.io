@@ -1,0 +1,154 @@
+.project-card:is(.dark) {
+	background-color: #eceff1;
+	backdrop-filter: blur(17px) saturate(200%);
+	-webkit-backdrop-filter: blur(17px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.55);
+}
+
+.project-card {
+	width: 900px;
+	overflow: hidden;
+	background-color: #eceff1;
+	border-radius: 24px;
+	transition: all 200ms ease-out;
+	display: flex;
+	padding-left: 4rem;
+	margin: 3rem;
+	margin-top: 0;
+	cursor: pointer;
+}
+
+.project-card:hover {
+	background-color: #f6f6f6;
+	box-shadow: 0 0 0 0 #e6ebef, 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+	-webkit-transform: scale(1.02);
+	-ms-transform: scale(1.02);
+	transform: scale(1.02);
+}
+
+.company-logo {
+	width: 32px;
+	height: 32px;
+	margin-right: 8px;
+	border-radius: 8px;
+}
+
+.small-caps-subtitle {
+	margin-bottom: 0px;
+	color: #5e5e63;
+	font-size: 14px;
+	line-height: 160%;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.small-caps-subtitle .light {
+	color: #bdbdc5;
+}
+
+.project-preview-image {
+	position: relative;
+	right: -12px;
+	bottom: -40px;
+	z-index: 0;
+	height: 400px;
+	max-width: 480px;
+	-webkit-align-self: stretch;
+	-ms-flex-item-align: stretch;
+	-ms-grid-row-align: stretch;
+	align-self: stretch;
+	border-radius: 16px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 60% 100%;
+	object-position: 60% 100%;
+}
+
+.primary-button {
+	display: flex;
+	padding: 15px 24px;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border: 2px solid #fff;
+	border-radius: 12px;
+	background-color: #fff;
+	box-shadow: none;
+	-webkit-transition: color 200ms ease;
+	transition: color 200ms ease;
+	color: #323235;
+	transition: all 0.2s linear;
+
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+.primary-button:hover {
+	box-shadow: none;
+	color: #5e5e63;
+	background-color: rgb(246, 246, 246);
+	border-radius: 12px;
+	transition: all 0.2s linear;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+.button-icon {
+	margin-left: 9px;
+	position: relative;
+	transform: translate3d(0px, 0px, 0px);
+	transform-style: preserve-3d;
+	transition: all 0.2s linear;
+}
+
+@media screen and (max-width: 991px) {
+	.project-card {
+		width: 80%;
+		height: auto;
+		min-width: auto;
+		margin-right: auto;
+		margin-left: auto;
+		padding-top: 32px;
+		padding-right: 32px;
+		padding-left: 32px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: stretch;
+		-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+		align-items: stretch;
+	}
+
+	.project-preview-image {
+		right: auto;
+		bottom: 0px;
+		width: 100%;
+		height: auto;
+		max-width: none;
+		margin-top: 24px;
+		-o-object-fit: scale-down;
+		object-fit: scale-down;
+	}
+
+	.project-preview-image.right-align {
+		right: -32px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.project-card {
+		width: auto;
+		margin-right: 32px;
+		margin-bottom: 48px;
+		margin-left: 32px;
+	}
+}
