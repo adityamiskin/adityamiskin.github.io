@@ -1,10 +1,10 @@
 import '../assets/css/About.css';
 import Navbar from '../components/Navbar';
-import sheep from '../assets/images/sheep.jpg';
+import sheep from '../assets/images/sheep.webp';
 import sheeps from '../assets/images/sheeps.webp';
 import flower from '../assets/images/flower.jpg';
 import flower_2 from '../assets/images/flower.webp';
-import myself from '../assets/images/myself.jpg';
+import myself from '../assets/images/myself.webp';
 import mountain from '../assets/images/mountain.webp';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
