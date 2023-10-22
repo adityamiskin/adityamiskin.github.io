@@ -63,16 +63,14 @@ function App() {
 	};
 
 	return (
-		<>
-			<HashRouter>
-				<Navbar toggleOnPlay={toggleOnPlay} toggleOnWork={toggleOnWork} toggleDirection={toggleDirection} toggleTheme={handleThemeChange} theme={theme} />
-				<Routes>
-					<Route path='/' element={<Home isWorkMode={isWorkMode} />} />
-					<Route path='/about' element={<About />} />
-				</Routes>
-				<Footer />
-			</HashRouter>
-		</>
+		<HashRouter basename='/'>
+			<Navbar toggleOnPlay={toggleOnPlay} toggleOnWork={toggleOnWork} toggleDirection={toggleDirection} toggleTheme={handleThemeChange} theme={theme} />
+			<Routes>
+				<Route path='/' element={<Home isWorkMode={isWorkMode} />} />
+				<Route path='/about' element={<About />} />
+			</Routes>
+			<Footer />
+		</HashRouter>
 	);
 }
 
