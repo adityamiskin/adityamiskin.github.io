@@ -1,4 +1,4 @@
-.project-card:is(.dark) {
+.project-card:is(.dark .dark\:project-card) {
 	background-color: #eceff1;
 	backdrop-filter: blur(17px) saturate(200%);
 	-webkit-backdrop-filter: blur(17px) saturate(200%);

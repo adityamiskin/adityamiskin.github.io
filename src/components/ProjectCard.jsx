@@ -76,7 +76,7 @@ const ProjectCard = () => {
 			{
 				projectDetails.map((project, index) => {
 					return (
-						<div className='project-card' key={index}>
+						<div className='project-card dark:project-card' key={index}>
 							<div className='v-stack max-width flex flex-col max-w-sm justify-center'>
 								<img
 									src='https://uploads-ssl.webflow.com/5e1689facb9d5168c0dcbe0b/60ec78fc1f2590230d69a4ac_ZipRecruiter%20Small%20Logo.png'
