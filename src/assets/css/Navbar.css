@@ -35,18 +35,16 @@
 	border-radius: 40px;
 	width: 60px;
 	height: 60px;
-	transition: all 0.2s linear;
+	transition: opacity 0.2s linear;
 	transform: translate3d(0.739px, 0.739px, 0px) scale3d(1, 1, 1) rotateX(0deg)
 		rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 	background-color: white;
 }
 
-.menu-btn {
-}
 
 .primary-nav:hover {
 	border-radius: 41px;
-	transition: all 0.2s linear;
+	transition: opacity 0.2s linear;
 	transform: translate3d(0.739px, 0.739px, 0px) scale3d(1, 1, 1) rotateX(0deg)
 		rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
@@ -111,7 +109,7 @@
 	will-change: transform;
 	transform-style: preserve-3d;
 	align-items: center;
-	transition: all 0.1s ease-in-out;
+	transition: transform 0.1s ease-in-out;
 	border-radius: 30px;
 	background-color: #f6f6f6;
 	box-shadow: 0 9px 30px 0 rgba(0, 0, 0, 0.1);
@@ -226,13 +224,12 @@
 	transform: rotate(180deg);
 }
 
-@keyframes fade-in {
-	0% {
-		opacity: 0; /* Start with full transparency (invisible) */
-	}
-	100% {
-		opacity: 1; /* End with full opacity (visible) */
-	}
+.closed {
+	opacity: 0;
+}
+
+.open {
+	opacity: 1;
 }
 
 .menu-container {
@@ -246,15 +243,7 @@
 	width: 250px;
 	padding: 9px;
 	transform-origin: 100% 0%;
-	/* transition: opacity 0.2s ease; */
-}
-
-.closed {
-	opacity: 0;
-}
-
-.open {
-	opacity: 1;
+	/* transition: opacity scale 0.08s ease-out; */
 }
 
 .open-current {
