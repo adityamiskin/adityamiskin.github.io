@@ -5,15 +5,15 @@ import 'aos/dist/aos.css';
 
 const Play = () => {
 
-  useEffect(() => {
-    AOS.init({
-      disable: 'mobile',
-      easing: "ease-in-out",
-      duration: 300,
+  // useEffect(() => {
+  //   AOS.init({
+  //     disable: 'mobile',
+  //     easing: "ease-in-out",
+  //     duration: 300,
 
-    });
-    AOS.refresh();
-  }, [])
+  //   });
+  //   AOS.refresh();
+  // }, [])
 
   const [images, setImages] = useState([])
 
@@ -22,30 +22,28 @@ const Play = () => {
     .then(response => response.json())
     .then(data => {
       data.resources.forEach(element => {
-        gallery.push("https://res.cloudinary.com/vite-img/q_10/" + element.public_id)
+        gallery.push("https://res.cloudinary.com/vite-img/w_700/q_auto/" + element.public_id)
       });
       setImages(gallery)
     });
 
   return (
-    <div>
-      <div className="w-full p-4 pb-10 mx-auto mb-10 gap-3 columns-3 columns-3xs space-y-3 w-100 ">
-        {images.map((image, index) => {
-          return (
-            <div key={index} className="relative flex items-start w-100" >
-              <img
-                src={image}
-                alt={`Image ${index}`}
-                className="w-full h-auto object-cover shadow"
-                loading="lazy"
-                data-aos="zoom-in"
-                data-aos-once="true"
-              />
-            </div>
-          )
-        })}
-      </div>
-    </div >
+    <div className="w-full p-4 pb-10 mx-auto mb-10 gap-3 columns-2 space-y-3 w-100 ">
+      {images.map((image, index) => {
+        return (
+          <div key={index} className="relative flex items-start w-100" >
+            <img
+              src={image}
+              alt={`Image ${index}`}
+              className="w-full h-auto object-cover shadow"
+              loading="lazy"
+            // data-aos="zoom-in"
+            // data-aos-once="true"
+            />
+          </div>
+        )
+      })}
+    </div>
   );
 }
 

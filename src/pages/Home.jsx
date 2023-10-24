@@ -9,7 +9,7 @@ const Home = ({ isWorkMode, theme }) => {
 	return (
 		<>
 			<motion.div
-				className='max-w-screen-xl mx-auto mb-24'
+				className='max-w-screen-2xl mx-auto mb-24'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{

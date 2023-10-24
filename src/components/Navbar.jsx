@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import '../assets/css/Navbar.css';
-import { motion, useCycle, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useCycle, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { MenuButton } from './MenuButton';
 import { useEffect, useState } from 'react';
 import { ReactComponent as SunSvg } from '../assets/images/sun.svg';
@@ -37,11 +37,30 @@ const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, them
 			transform: 'translate3d(0.739px, 0.739px, 0px)',
 		});
 	};
+
 	const navigate = useNavigate();
 	const [isOpen, setOpen] = useState(false);
+	const [menuState, setMenuState] = useState("open")
+
 	const variants = {
-		open: { opacity: 1, scale: 1 },
-		closed: { opacity: 0, scale: 0 },
+		"open": {
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			y: 0,
+		},
+		"closed": {
+			opacity: 0,
+			scale: 0,
+			x: -50, // Example: move menu items off-screen
+			y: 0,
+		},
+		"exit": {
+			opacity: 0,
+			scale: 0,
+			x: -50,
+			y: 0,
+		},
 	};
 
 	const iconVariants = {
@@ -50,43 +69,43 @@ const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, them
 		exit: { opacity: 0, scale: 0 },
 	};
 
-	const Menu = (props) => {
-		useEffect(() => {
-			const homePath = document.querySelector('.home-path');
-			const aboutPath = document.querySelector('.about-path');
-			if (location.pathname === '/') {
-				homePath.classList.add('open-current');
-				aboutPath.classList.remove('open-current');
-			} else {
-				// console.log(homePath.classList);
-				aboutPath.classList.add('open-current');
-				homePath.classList.remove('open-current');
+	const Menu = () => {
 
-				// console.log(homePath.classList);
-			}
-		}, []);
+		// useEffect(() => {
+		// 	const homePath = document.querySelector('.home-path');
+		// 	const aboutPath = document.querySelector('.about-path');
+		// 	if (location.pathname === '/') {
+		// 		homePath.classList.add('open-current');
+		// 		aboutPath.classList.remove('open-current');
+		// 	} else {
+		// 		aboutPath.classList.add('open-current');
+		// 		homePath.classList.remove('open-current');
+		// 	}
+		// }, []);
 
 		return (
-			<>
+			<motion.div
+				initial={false}
+				animate={isOpen ? 'open' : 'closed'}
+				variants={variants}>
 				<button
-					className='primary-nav flex justify-center items-center dark:bg-black bg-white'
-					onClick={() => setOpen(!props.isOpen)}
+					className='primary-nav flex justify-center items-center dark:bg-black bg-white menu-btn'
+					onClick={() => setOpen(!isOpen)}
 					type='button'>
 					<MenuButton
-						isOpen={props.isOpen}
+						isOpen={isOpen}
 						strokeWidth='2'
 						lineProps={{ strokeLinecap: 'round' }}
-						transition={{ ease: 'easeOut', duration: 0.2 }}
+						transition={{ ease: 'easeIn', duration: 0.2 }}
 						width='24'
 						height='16'
 						color={theme === 'dark' ? '#fff' : '#000'}
 					/>
 				</button>
+
 				<motion.div
 					className='menu-container dark:bg-black'
-					initial={props.closed}
-					animate={props.isOpen ? 'open' : 'closed'}
-					variants={variants}>
+				>
 					<a
 						href='/'
 						aria-current='page'
@@ -99,7 +118,9 @@ const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, them
 						<div className='menu-item-text dark:text-white'>About</div>
 					</a>
 				</motion.div>
-			</>
+
+
+			</motion.div>
 		);
 	};
 
@@ -163,7 +184,7 @@ const Navbar = ({ toggleOnPlay, toggleOnWork, toggleDirection, toggleTheme, them
 						/>
 					</div>
 
-					<Menu closed={closed} isOpen={isOpen} />
+					<Menu />
 				</motion.div>
 			) : (
 				<nav className='flex justify-between nav-menu dark:text-white'>

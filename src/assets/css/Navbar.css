@@ -41,6 +41,9 @@
 	background-color: white;
 }
 
+.menu-btn {
+}
+
 .primary-nav:hover {
 	border-radius: 41px;
 	transition: all 0.2s linear;
@@ -223,6 +226,15 @@
 	transform: rotate(180deg);
 }
 
+@keyframes fade-in {
+	0% {
+		opacity: 0; /* Start with full transparency (invisible) */
+	}
+	100% {
+		opacity: 1; /* End with full opacity (visible) */
+	}
+}
+
 .menu-container {
 	position: absolute;
 	background-color: white;
@@ -234,6 +246,15 @@
 	width: 250px;
 	padding: 9px;
 	transform-origin: 100% 0%;
+	/* transition: opacity 0.2s ease; */
+}
+
+.closed {
+	opacity: 0;
+}
+
+.open {
+	opacity: 1;
 }
 
 .open-current {
