@@ -19,6 +19,25 @@ const Navbar = ({
   toggleTheme,
   theme,
 }) => {
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 500;
+
+      setIsVisible(isVisible);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
+
   // const location = useLocation();
   const [buttonStyle, setButtonStyle] = useState({
     transform: "translate3d(0.739px, 0.739px, 0px)",
@@ -65,49 +84,6 @@ const Navbar = ({
 
 
 
-//   const Menu = () => {
-//     return (
-//       <>
-//         <button
-//           className="primary-nav flex justify-center items-center dark:bg-black bg-white"
-//           onClick={() => handleMenuClick()}
-//           type="button"
-//         >
-//           <MenuButton
-//             isOpen={isOpen}
-//             strokeWidth="2"
-//             lineProps={{ strokeLinecap: "round" }}
-//             transition={{ ease: "easeIn", duration: 0.2 }}
-//             width="24"
-//             height="16"
-//             color={theme === "dark" ? "#fff" : "#000"}
-//           />
-//         </button>
-
-//         <motion.div
-//           className={`menu-container dark:bg-black ${
-//             isOpen ? "open" : "closed"
-//           }`}
-//           initial={isOpen ? "closed" : "open"}
-//           animate={isOpen ? "open" : "closed"}
-//           variants={variants}
-//         >
-//           <a
-//             href="/"
-//             aria-current="page"
-//             className="menu-item flex p-4 rounded-lg"
-//           >
-//             <House className="menu-item-icon" />
-//             <div className="menu-item-text dark:text-white">Home</div>
-//           </a>
-//           <a href="/about" className="menu-item flex p-4 rounded-lg">
-//             <User className="menu-item-icon" />
-//             <div className="menu-item-text dark:text-white">About</div>
-//           </a>
-//         </motion.div>
-//       </>
-//     );
-//   };
 
   return (
     <>
@@ -115,8 +91,8 @@ const Navbar = ({
         <motion.div
           className="flex justify-between nav-menu"
           initial={{ y: -200 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.4 }}
+          animate={{ y: isVisible ? 0 : -200 }}
+          transition={{ duration: 0.3 }}
         >
           <motion.div
             className="primary-nav flex justify-center items-center bg-[#6b46c1] dark:bg-[#f6ad55] "
@@ -159,7 +135,7 @@ const Navbar = ({
                 className="color-gradient-span text-lg w-full text-center"
                 onClick={toggleOnPlay}
               >
-                Play
+                Life
               </div>
             </div>
 
@@ -176,7 +152,7 @@ const Navbar = ({
             />
           </div>
 
-          <Menu theme={theme}/>
+          <Menu theme={theme} />
         </motion.div>
       ) : (
         <nav className="flex justify-between nav-menu dark:text-white">
@@ -188,7 +164,7 @@ const Navbar = ({
           >
             <ArrowLeft />
           </motion.div>
-          <Menu theme={theme}/>
+          <Menu theme={theme} />
         </nav>
       )}
     </>

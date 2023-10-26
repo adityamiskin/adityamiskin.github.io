@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Play = () => {
+const Life = () => {
 
   // useEffect(() => {
   //   AOS.init({
@@ -47,4 +47,4 @@ const Play = () => {
   );
 }
 
-export default Play
+export default Life

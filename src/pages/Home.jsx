@@ -1,8 +1,10 @@
 import Hero from '../components/Hero';
 import { motion } from 'framer-motion';
-import Play from '../components/Play';
+import Life from '../components/Life';
 import Work from '../components/Work';
 import ParticleEffect from '../components/ParticlesEffect';
+
+import ScrollToTop from '../components/ScrollToTop';
 
 const Home = ({ isWorkMode, theme }) => {
 
@@ -20,8 +22,9 @@ const Home = ({ isWorkMode, theme }) => {
 				) : (null)}
 				<Hero isWorkMode={isWorkMode} />
 				<div className='flex flex-col justify-center items-center'>
-					{isWorkMode ? <Work /> : <Play />}
+					{isWorkMode ? <Work /> : <Life />}
 				</div>
+				<ScrollToTop />
 			</motion.div>
 		</>
 	);

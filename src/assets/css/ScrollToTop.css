@@ -1,0 +1,21 @@
+.btn-scrollTop {
+	position: fixed;
+	width: 64px;
+	height: 64px;
+	bottom: 2%;
+	z-index: 1;
+	cursor: pointer;
+	right: 2%;
+	border-radius: 50rem;
+	padding: 0px;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.16);
+	border: 0px solid #000;
+}
+
+:is(.dark .dark\:stroke-white) polyline {
+	stroke: #fff !important;
+}
+
+:is(.dark .dark\:stroke-white) line {
+	stroke: #fff !important;
+}
