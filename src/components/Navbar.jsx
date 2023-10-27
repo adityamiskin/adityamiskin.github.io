@@ -83,8 +83,6 @@ const Navbar = ({
   };
 
 
-
-
   return (
     <>
       {location.pathname === "/" ? (

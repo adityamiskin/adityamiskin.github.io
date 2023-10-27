@@ -4,6 +4,7 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react';
+import AnimatedCursor from "react-animated-cursor"
 
 import './app.css';
 import { Router, Route, Routes, BrowserRouter } from 'react-router-dom'
@@ -46,8 +47,6 @@ function App() {
 		}
 	}, [theme]);
 
-
-
 	const toggleOnWork = () => {
 		if (!isWorkMode) {
 			setIsWorkMode(true);
@@ -64,6 +63,34 @@ function App() {
 
 	return (
 		<BrowserRouter basename='/'>
+			{/* <Cursor /> */}
+			{/* <AnimatedCursor
+				innerSize={8}
+				outerSize={35}
+				outerAlpha={0}
+				innerScale={1}
+				outerScale={2}
+				hasBlendMode={true}
+				clickables={[
+					'a',
+					'input[type="text"]',
+					'input[type="email"]',
+					'input[type="number"]',
+					'input[type="submit"]',
+					'input[type="image"]',
+					'label[for]',
+					'select',
+					'textarea',
+					'button',
+					'.link'
+				]}
+				trailingSpeed={3}
+				outerStyle={{ mixBlendMode: 'exclusion', border: `2px solid ${theme === "dark" ? "#fff" : "#000"}` }}
+				innerStyle={{
+					mixBlendMode: 'exclusion',
+					backgroundColor: `${theme === "dark" ? "#fff" : "#000"}`
+				}}
+			/> */}
 			<Navbar toggleOnPlay={toggleOnPlay} toggleOnWork={toggleOnWork} toggleDirection={toggleDirection} toggleTheme={handleThemeChange} theme={theme} />
 			<Routes>
 				<Route path='/' element={<Home isWorkMode={isWorkMode} theme={theme} />} />

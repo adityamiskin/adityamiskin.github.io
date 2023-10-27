@@ -4,9 +4,8 @@
 
 body {
 	font-family: 'Inter', sans-serif;
-	background-color: #f6f6f6;
 	@apply transition-colors duration-200;
-	/* background-color: #333333; */
+	overflow-x: hidden;
 }
 
 h2 {
@@ -55,5 +54,5 @@ h1 {
 }
 
 .dark {
-	background-color: #202023;
+	background-color: #1a191d;
 }

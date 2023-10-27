@@ -34,7 +34,9 @@ const Hero = ({ isWorkMode }) => {
 						</div>
 
 						<p className='text-center text-lg hero-centered-paragraph work dark:text-white z-10'>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quibusdam pariatur repellendus atque repudiandae et tempora possimus.
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quibusdam pariatur repellendu. Check out my {' '} <a href='https://drive.google.com/file/d/1vcZuMpWLirjbk_POncp6-W7ZxPj_H8jT/view?usp=drivesdk' className='link-text dark:text-white'>
+								resume.
+							</a>
 						</p>
 
 					</motion.div>

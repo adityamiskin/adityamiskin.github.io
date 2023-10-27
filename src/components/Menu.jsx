@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { MenuButton } from "./MenuButton";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { ReactComponent as House } from "../assets/images/House.svg";
 import { ReactComponent as User } from "../assets/images/User.svg";
 
-const Menu = ({theme}) => {
+const Menu = ({ theme }) => {
   const [isOpen, setOpen] = useState(false);
 
   const variants = {
@@ -12,6 +12,9 @@ const Menu = ({theme}) => {
     closed: { scale: 0, opacity: 0 },
     exit: { scale: 0, opacity: 0 },
   };
+
+  // Rest of the Menu component code
+
 
   return (
     <>

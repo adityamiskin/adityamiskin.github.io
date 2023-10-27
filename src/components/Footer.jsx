@@ -5,9 +5,11 @@ import { useState } from 'react';
 import { ReactComponent as Twitter } from '../assets/images/twitter.svg';
 import { ReactComponent as Github } from '../assets/images/github.svg';
 import { ReactComponent as LinkedIn } from '../assets/images/linkedin.svg';
+import { ReactComponent as Instagram } from '../assets/images/instagram.svg';
+
 const Footer = () => {
 	const [buttonStyles, setButtonStyles] = useState(
-		Array(3).fill({
+		Array(4).fill({
 			transform: 'translate3d(0.73892px, 0.73816px, 0px)',
 		})
 	);
@@ -70,6 +72,15 @@ const Footer = () => {
 					onMouseLeave={(e) => handleMouseLeave(e, 2)}
 					style={buttonStyles[2]}>
 					<Github className='w-8 h-8 mx-auto' />
+				</a>
+				<a
+					href='https://www.instagram.com/by.miskin/'
+					target='_blank'
+					className='social-icon-link w-inline-block dark:bg-white'
+					onMouseMove={(e) => handleMouseMove(e, 3)}
+					onMouseLeave={(e) => handleMouseLeave(e, 3)}
+					style={buttonStyles[3]}>
+					<Instagram className='w-8 h-8 mx-auto' />
 				</a>
 			</div>
 			<div className='caption dark:text-white'>
