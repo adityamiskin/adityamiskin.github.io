@@ -8,13 +8,10 @@ const Menu = ({ theme }) => {
   const [isOpen, setOpen] = useState(false);
 
   const variants = {
-    open: { scale: 1, opacity: 1 },
     closed: { scale: 0, opacity: 0 },
+    open: { scale: 1, opacity: 1 },
     exit: { scale: 0, opacity: 0 },
   };
-
-  // Rest of the Menu component code
-
 
   return (
     <>
@@ -36,7 +33,7 @@ const Menu = ({ theme }) => {
 
       <motion.div
         className={`menu-container dark:bg-black ${isOpen ? "open" : "closed"}`}
-        initial={isOpen ? "closed" : "open"}
+        initial={isOpen ? "open" : "closed"}
         animate={isOpen ? "open" : "closed"}
         variants={variants}
       >
