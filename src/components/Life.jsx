@@ -28,7 +28,7 @@ const Life = () => {
     });
 
   return (
-    <div className="w-full p-4 pb-10 mx-auto mb-10 gap-3 columns-2 space-y-3 w-100 ">
+    <div className="w-full p-4 pb-10 mx-auto mb-10 gap-4 columns-4 columns-xs space-y-4 w-100 px-12">
       {images.map((image, index) => {
         return (
           <div key={index} className="relative flex items-start w-100" >

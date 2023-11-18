@@ -87,7 +87,7 @@ const About = () => {
 				</p>
 				<p className='case-paragraph dark:text-white'>
 					If you want to chat, feel free to{' '}
-					<a href='https://www.linkedin.com/in/aditya-miskin/' className='link-text dark:text-white'>
+					<a href='mailto:adityamiskin98@gmail.com' className='link-text dark:text-white'>
 						reach out.
 					</a>
 				</p>

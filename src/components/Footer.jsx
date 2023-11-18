@@ -56,7 +56,7 @@ const Footer = () => {
 					<Twitter className='w-8 h-8 mx-auto' />
 				</a>
 				<a
-					href='https://www.linkedin.com/in/aditya-miskin/'
+					href='https://linkedin.com/in/aditya-miskin/'
 					target='_blank'
 					className='social-icon-link w-inline-block dark:bg-white'
 					onMouseMove={(e) => handleMouseMove(e, 1)}
@@ -74,7 +74,7 @@ const Footer = () => {
 					<Github className='w-8 h-8 mx-auto' />
 				</a>
 				<a
-					href='https://www.instagram.com/by.miskin/'
+					href='https://instagram.com/by.miskin/'
 					target='_blank'
 					className='social-icon-link w-inline-block dark:bg-white'
 					onMouseMove={(e) => handleMouseMove(e, 3)}
