@@ -7,23 +7,34 @@ import Photo from './pages/Photo';
 import AnimatedCursor from 'react-animated-cursor';
 import Carousel from './components/Carousel';
 
-import Test from './assets/images/portraits/DSCF5114.jpg';
-import Test1 from './assets/images/portraits/DSCF5134.jpg';
-import Test2 from './assets/images/portraits/DSCF5167.jpg';
-import Test3 from './assets/images/portraits/DSCF5209.jpg';
-import Test4 from './assets/images/portraits/DSCF5246.jpg';
 import Work from './pages/Work';
 
 function App() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const imageTypes = ['Street', 'Landscape', 'Nature', 'Portraits', 'Urban'];
-	const carouselImages = [
-		[Test, Test1, Test2, Test3, Test4], // Street
-		[Test1, Test2, Test3, Test4, Test], // Landscape
-		[Test2, Test3, Test4, Test, Test1], // Nature
-		[Test3, Test4, Test, Test1, Test2], // Portraits
-		[Test4, Test, Test1, Test2, Test3], // Urban
+
+	const shuffleImages = (images) => {
+		for (let i = images.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[images[i], images[j]] = [images[j], images[i]];
+		}
+		return images;
+	};
+
+	const carouselImages2 = [
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_70,w_1800/v1704634247/DSCF5114_gqu1gy.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_70,w_1800/v1704634246/DSCF5246_lqgfod.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_70,w_1800/v1704634255/DSCF5134_ap7qjx.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_70,w_1800/v1704634260/DSCF5209_ewun9f.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_70,w_1800/v1704634255/DSCF5167_w0oxu3.webp',
 	];
+
+	const shuffledCarouselImages2 = shuffleImages(carouselImages2);
+
+	const shuffledCarouselImages = imageTypes.map(() =>
+		shuffleImages([...shuffledCarouselImages2]),
+	);
+
 	return (
 		<BrowserRouter>
 			{/* <AnimatedCursor
@@ -52,7 +63,7 @@ function App() {
 					<Route
 						key={type}
 						path={`/photo/${type.toLowerCase()}`}
-						element={<Carousel slides={carouselImages[index]} />}
+						element={<Carousel slides={shuffledCarouselImages[index]} />}
 					/>
 				))}
 			</Routes>

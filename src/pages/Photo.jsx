@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import Test from '../assets/images/test.webp';
-// import Test1 from '../assets/images/test1.jpg';
-// import Test2 from '../assets/images/test2.jpg';
-import Test3 from '../assets/images/test3.webp';
-import Test4 from '../assets/images/test4.webp';
-import Test2 from '../assets/images/test8.webp';
-import Test1 from '../assets/images/test7.webp';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Photo = () => {
 	const [currentImage, setCurrentImage] = useState(0);
-	const images = [Test, Test1, Test2, Test3, Test4];
+	// const images = [Test, Test1, Test2, Test3, Test4];
+	const images = [
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632731/test_hjtzaw.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632729/test7_fasrqt.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632729/test8_wethqp.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632731/test3_yqykrt.webp',
+		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704633882/test4_xtagby.webp',
+	];
 	const imageTypes = ['STREET', 'LANDSCAPE', 'NATURE', 'PORTRAIT', 'URBAN'];
 	const [isMouseLeft, setIsMouseLeft] = useState(false);
 
