@@ -70,7 +70,7 @@ const Contact = () => {
 		status: null,
 	});
 
-	const formKey = process.env.VITE_FORMSPREE_KEY;
+	const formKey = import.meta.env.VITE_FORMSPREE_KEY;
 
 	const validateForm = () => {
 		let formErrors = {};
