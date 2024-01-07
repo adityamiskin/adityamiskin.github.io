@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Carousel = ({ slides }) => {
-	// const slides = [Test, Test1, Test2, Test3, Test4];
 	const [current, setCurrent] = useState(0);
 	const length = slides.length;
 	const [offset, setOffset] = useState(0);
 	const imageRefs = useRef([]);
+	const [isMouseLeft, setIsMouseLeft] = useState(false);
 
 	const gap = 8;
 
@@ -29,23 +28,41 @@ const Carousel = ({ slides }) => {
 		setCurrent(prev);
 	};
 
+	const getMousePosition = (event) => {
+		const x = event.clientX;
+		const windowWidth = window.innerWidth;
+
+		setIsMouseLeft(x < windowWidth / 2);
+	};
+
+	useEffect(() => {
+		window.addEventListener('mousemove', getMousePosition);
+
+		// Clean up the event listener when the component unmounts
+		return () => {
+			window.removeEventListener('mousemove', getMousePosition);
+		};
+	}, []);
+
 	useEffect(() => {
 		imageRefs.current = imageRefs.current.slice(0, slides.length);
 	}, [slides]);
 
 	return (
-		<section className='flex items-center h-[550px] md:overflow-x-hidden md:absolute w-full relative px-4'>
+		<section className='flex items-center h-[600px] md:overflow-x-hidden md:absolute w-full relative px-4 fade-in'>
 			{current !== 0 && (
 				<button
-					className='bg-black p-4 fixed left-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex'
-					onClick={prevSlide}>
+					className='bg-black p-4 fixed left-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex transition-opacity duration-300'
+					onClick={prevSlide}
+					style={{ opacity: isMouseLeft ? 1 : 0 }}>
 					<FaChevronLeft className='text-lg text-white' />
 				</button>
 			)}
 
 			<button
-				className='bg-black p-4 fixed right-10 top-1/2 transform -translate-y-1/2 transition duration-1000 z-50 hidden md:flex'
-				onClick={nextSlide}>
+				className='bg-black p-4 fixed right-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex transition-opacity duration-300'
+				onClick={nextSlide}
+				style={{ opacity: !isMouseLeft ? 1 : 0 }}>
 				<FaChevronRight className='text-lg text-white' />
 			</button>
 			<div
@@ -58,7 +75,7 @@ const Carousel = ({ slides }) => {
 					return (
 						<div
 							key={index}
-							className={`md:h-[550px] md:w-fit w-full transition-opacity duration-500  ${
+							className={`md:h-[600px] md:w-fit w-full transition-opacity duration-500  ${
 								index === current - 1 ? 'opacity-0' : 'opacity-100'
 							}`}
 							ref={(el) => (imageRefs.current[index] = el)}>
@@ -67,8 +84,11 @@ const Carousel = ({ slides }) => {
 								alt='portrait'
 								className='w-full md:h-[500px] h-full mb-3 z-40'
 							/>
-							<p className='text-black mb-4 font-head font-semibold text-lg ml-4'>
+							<p className='text-black mb-4 font-head font-semibold text-lg ml-4 md:ml-0'>
 								Lorem ipsum dolor sit amet.
+							</p>
+							<p className='text-black mb-4 text-base ml-4 md:ml-0'>
+								Lorem ipsum dolor, sit amet consectetur
 							</p>
 						</div>
 					);
