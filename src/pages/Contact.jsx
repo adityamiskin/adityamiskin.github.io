@@ -70,7 +70,7 @@ const Contact = () => {
 		status: null,
 	});
 
-	const formKey = import.meta.env.VITE_FORMSPREE_KEY;
+	const formKey = process.env.VITE_FORMSPREE_KEY;
 
 	const validateForm = () => {
 		let formErrors = {};
@@ -89,6 +89,8 @@ const Contact = () => {
 		// If no errors, return true, else return false
 		return Object.keys(formErrors).length === 0;
 	};
+
+	// console.log(import.meta.env);
 
 	const handleServerResponse = (ok, msg) => {
 		setServerState({
