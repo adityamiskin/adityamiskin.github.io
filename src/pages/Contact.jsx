@@ -167,7 +167,7 @@ const Contact = () => {
 						<div className='w-full'>
 							<label
 								htmlFor='firstName'
-								className='block text-sm text-gray-600 tracking-wider'>
+								className='block text-sm tracking-wider'>
 								First Name
 							</label>
 							<input

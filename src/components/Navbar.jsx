@@ -6,12 +6,13 @@ import {
 	FaGithub,
 	FaBars,
 } from 'react-icons/fa6';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiSun, FiMoon } from 'react-icons/fi';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 	const [activeLink, setActiveLink] = useState('/');
 	const [isSubmenuOpen, setSubmenuOpen] = useState(false);
+	const [darkMode, setDarkMode] = useState(false);
 	const location = useLocation();
 	const imageTypes = ['Street', 'Landscape', 'Nature', 'Portraits', 'Urban'];
 
@@ -35,6 +36,15 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 		.map((type) => type.toLowerCase())
 		.includes(lowerCaseImageType);
 
+	useEffect(() => {
+		if (darkMode) {
+			document.body.classList.add('dark');
+		} else {
+			document.body.classList.remove('dark');
+		}
+		document.body.classList.add('transition-colors');
+	}, [darkMode]);
+
 	return (
 		<>
 			{location.pathname === '/photo' && (
@@ -46,7 +56,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					}}></div>
 			)}
 
-			<div className='flex md:hidden flex-col mb-8 p-4 relative'>
+			<div className='flex md:hidden flex-col mb-8 p-4 relative '>
 				<div
 					className={`flex justify-between mb-2 ${
 						location.pathname === '/photo'
@@ -54,17 +64,26 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 							: location.pathname.startsWith('/photo/')
 							? 'text-black'
 							: 'text-black'
-					}`}>
+					} dark:text-white`}>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
 						<h1 className='tracking-widest font-head font-semibold text-3xl z-20 relative'>
 							ADITYA MISKIN
 						</h1>
 					</Link>
-					<button
-						onClick={() => setNavbarOpen((prevState) => !prevState)}
-						className='relative z-50'>
-						<FiMenu className='text-3xl' />
-					</button>
+					<div className='flex items-center gap-4'>
+						<button onClick={() => setDarkMode(!darkMode)}>
+							{darkMode ? (
+								<FiSun className='text-2xl transition ease-in-out duration-500' />
+							) : (
+								<FiMoon className='text-2xl transition ease-in-out duration-500' />
+							)}
+						</button>
+						<button
+							onClick={() => setNavbarOpen((prevState) => !prevState)}
+							className={`relative z-50 ${navbarOpen ? 'text-black' : null}`}>
+							<FiMenu className='text-3xl' />
+						</button>
+					</div>
 				</div>
 				<h2
 					className={`tracking-[7.5px] text-[#111] font-thin z-30 relative ${
@@ -73,13 +92,13 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 							: location.pathname.startsWith('/photo/')
 							? 'text-black'
 							: 'text-black'
-					}`}>
+					} dark:text-white`}>
 					TELLING STORIES IN EVERY MEDIUM
 				</h2>
 			</div>
 
 			<header
-				className={`justify-between items-center transition-all duration-300 ${
+				className={`justify-between items-center transition-all duration-250 dark:text-white ${
 					isImageTypePath ? 'mb-10 p-4' : 'mb-10 p-10'
 				} z-50 relative md:flex hidden max-w-8xl mx-auto ${
 					location.pathname === '/photo'
@@ -130,7 +149,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 								<li>+ Photo</li>
 							</Link>
 							{isSubmenuOpen && (
-								<ul className='absolute flex flex-col p-6 text-sm w-36 gap-4 left-[-35px] mt-2 bg-black text-white border-t-2 border-transparent'>
+								<ul className='absolute flex flex-col p-6 text-sm w-36 gap-4 left-[-35px] mt-2 bg-black text-white border-t-2 border-transparent dark:bg-[#fbfbfb] dark:text-black'>
 									{imageTypes.map((type) => (
 										<li key={type}>
 											<Link
@@ -159,6 +178,14 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 							<li>Contact</li>
 						</Link>
 
+						<button onClick={() => setDarkMode(!darkMode)}>
+							{darkMode ? (
+								<FiSun className='text-2xl transition ease-in-out duration-500' />
+							) : (
+								<FiMoon className='text-2xl transition ease-in-out duration-500' />
+							)}
+						</button>
+
 						<li className='text-xl flex gap-4'>
 							<Link to='https://github.com/adityamiskin'>
 								<FaGithub />
@@ -178,7 +205,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 			</header>
 
 			<div
-				className={`w-full h-full text-left transition-transform duration-300 ease-out transform fixed bg-[#fbfbfb] top-0 left-0 p-6 py-8 font-head md:hidden z-40 ${
+				className={`w-full h-full text-left transition-transform duration-300 ease-out transform fixed bg-[#fbfbfb] top-0 left-0 p-6 py-8 font-head md:hidden z-40 dark:text-black ${
 					navbarOpen ? 'translate-x-0' : 'translate-x-full'
 				}`}>
 				<ul className='flex flex-col gap-8 tracking-wider text-lg font-head'>

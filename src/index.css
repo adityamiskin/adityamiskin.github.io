@@ -80,6 +80,10 @@ a {
 	border-color: #111;
 }
 
+.dark .link:hover {
+	border-color: white;
+}
+
 .sublink {
 	transition: 300ms;
 	border-bottom: 1px solid transparent;
@@ -89,9 +93,17 @@ a {
 	border-color: white;
 }
 
+.dark .sublink:hover {
+	border-color: #111;
+}
+
 .active {
 	border-bottom: 1px solid transparent;
 	border-color: #111;
+}
+
+.dark .active {
+	border-color: white;
 }
 
 .extra {
@@ -109,6 +121,10 @@ a {
 	border-bottom: 10px solid black; /* Match this color with the background color of the submenu */
 }
 
+.dark .extra.open::before {
+	border-bottom: 10px solid #fbfbfb; /* Match this color with the background color of the submenu */
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -121,7 +137,16 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.dark {
+	background-color: black;
+	color: white;
+}
+
 .error {
 	color: red;
 	font-size: 12px;
+}
+
+.transition-colors {
+	transition: background-color 0.5s ease, color 0.5s ease;
 }
