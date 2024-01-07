@@ -108,6 +108,12 @@ const Contact = () => {
 				subject: '',
 				message: '',
 			});
+		} else {
+			toast.error('Form not submitted!', {
+				position: toast.POSITION.BOTTOM_RIGHT,
+				closeOnClick: true,
+				pauseOnHover: false,
+			});
 		}
 	};
 
