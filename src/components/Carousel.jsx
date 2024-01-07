@@ -49,7 +49,7 @@ const Carousel = ({ slides }) => {
 	}, [slides]);
 
 	return (
-		<section className='flex items-center h-[600px] md:overflow-x-hidden md:absolute w-full relative px-4 fade-in'>
+		<section className='flex items-center h-[600px] md:overflow-x-hidden md:absolute w-full relative px-4 fade-in '>
 			{current !== 0 && (
 				<button
 					className='bg-black p-4 fixed left-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex transition-opacity duration-300'
@@ -84,10 +84,10 @@ const Carousel = ({ slides }) => {
 								alt='portrait'
 								className='w-full md:h-[500px] h-full mb-3 z-40'
 							/>
-							<p className='text-black mb-4 font-head font-semibold text-lg ml-4 md:ml-0'>
+							<p className='text-black mb-4 font-head font-semibold text-lg ml-4 md:ml-0 dark:text-white'>
 								Lorem ipsum dolor sit amet.
 							</p>
-							<p className='text-black mb-4 text-base ml-4 md:ml-0'>
+							<p className='text-black mb-4 text-base ml-4 md:ml-0 dark:text-white'>
 								Lorem ipsum dolor, sit amet consectetur
 							</p>
 						</div>
