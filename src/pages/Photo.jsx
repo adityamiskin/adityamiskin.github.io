@@ -3,7 +3,7 @@ import Test from '../assets/images/test.jpg';
 // import Test1 from '../assets/images/test1.jpg';
 // import Test2 from '../assets/images/test2.jpg';
 import Test3 from '../assets/images/test3.jpg';
-import Test4 from '../assets/images/test4.JPG';
+import Test4 from '../assets/images/test4.jpg';
 import Test2 from '../assets/images/test8.jpg';
 import Test1 from '../assets/images/test7.jpg';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
