@@ -14,7 +14,7 @@ const About = () => {
 						planet of ours. In my free time, I play a lot of 🎮 games and learn
 						🎸guitar. Check out my resume over{' '}
 						<Link
-							to='https://drive.google.com/file/d/1vcZuMpWLirjbk_POncp6-W7ZxPj_H8jT/view?usp=drive_link'
+							to='https://drive.google.com/file/d/1FNhPrthCFp8oFNeC0Ve9pj9fte2GKg1X/view?usp=sharing'
 							className='link-text'>
 							here.
 						</Link>
