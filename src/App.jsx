@@ -4,32 +4,32 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react';
-import AnimatedCursor from "react-animated-cursor"
+import AnimatedCursor from 'react-animated-cursor';
+import LifeNew from './pages/LifeNew';
 
 import './app.css';
-import { Router, Route, Routes, BrowserRouter } from 'react-router-dom'
+import { Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 function App() {
-
 	const [isWorkMode, setIsWorkMode] = useState(true);
 	const [toggleDirection, setToggleDirection] = useState(0);
 	const [theme, setTheme] = useState(() => {
-		const initialTheme = localStorage.getItem("theme");
-		return initialTheme ? initialTheme : "light";
+		const initialTheme = localStorage.getItem('theme');
+		return initialTheme ? initialTheme : 'light';
 	});
 
 	const getThemeFromLocalStorage = () => {
-		const savedTheme = localStorage.getItem('theme') // returns 'light' in this case
+		const savedTheme = localStorage.getItem('theme'); // returns 'light' in this case
 
 		if (savedTheme) {
 			setTheme(savedTheme);
 		}
-	}
+	};
 
 	const handleThemeChange = () => {
 		setTheme((prevTheme) => {
-			const newTheme = prevTheme === "light" ? "dark" : "light";
-			localStorage.setItem("theme", newTheme);
+			const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+			localStorage.setItem('theme', newTheme);
 			return newTheme;
 		});
 	};
@@ -41,8 +41,7 @@ function App() {
 	useEffect(() => {
 		if (theme === 'dark') {
 			document.body.classList.add('dark');
-		}
-		else {
+		} else {
 			document.body.classList.remove('dark');
 		}
 	}, [theme]);
@@ -91,13 +90,23 @@ function App() {
 					backgroundColor: `${theme === "dark" ? "#fff" : "#000"}`
 				}}
 			/> */}
-			<Navbar toggleOnPlay={toggleOnPlay} toggleOnWork={toggleOnWork} toggleDirection={toggleDirection} toggleTheme={handleThemeChange} theme={theme} />
+			<Navbar
+				toggleOnPlay={toggleOnPlay}
+				toggleOnWork={toggleOnWork}
+				toggleDirection={toggleDirection}
+				toggleTheme={handleThemeChange}
+				theme={theme}
+			/>
 			<Routes>
-				<Route path='/' element={<Home isWorkMode={isWorkMode} theme={theme} />} />
+				<Route
+					path='/'
+					element={<Home isWorkMode={isWorkMode} theme={theme} />}
+				/>
 				<Route path='/about' element={<About />} />
+				<Route path='/life' element={<LifeNew />} />
 			</Routes>
 			<Footer />
-		</BrowserRouter >
+		</BrowserRouter>
 	);
 }
 
