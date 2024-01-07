@@ -47,10 +47,6 @@ const DEFAULT_OPTIONS = {
 		// https://sharp.pixelplumbing.com/api-output#jpeg
 		quality: 100,
 	},
-	jpg: {
-		// https://sharp.pixelplumbing.com/api-output#jpeg
-		quality: 60,
-	},
 	tiff: {
 		// https://sharp.pixelplumbing.com/api-output#tiff
 		quality: 100,
