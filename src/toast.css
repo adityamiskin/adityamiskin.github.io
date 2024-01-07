@@ -1,0 +1,23 @@
+/** Classes for the displayed toast **/
+.Toastify__toast {
+	border-radius: 0px;
+	font-family: 'proxima_nova', serif;
+	letter-spacing: 1.1px;
+	font-size: 14px;
+	width: fit-content;
+}
+.Toastify__toast-body {
+	margin: 0;
+	margin-right: 1rem;
+}
+
+.Toastify__toast-theme--light {
+	background-color: rgb(39, 39, 39);
+	color: #fff;
+}
+
+/** Classes for the close button. Better use your own closeButton **/
+.Toastify__close-button {
+	opacity: 1;
+	color: white;
+}
