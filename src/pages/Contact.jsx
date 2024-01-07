@@ -90,9 +90,6 @@ const Contact = () => {
 		return Object.keys(formErrors).length === 0;
 	};
 
-	console.log(import.meta.env);
-	console.log(process.env);
-
 	const handleServerResponse = (ok, msg) => {
 		setServerState({
 			submitting: false,
