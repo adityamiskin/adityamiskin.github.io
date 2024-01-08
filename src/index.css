@@ -16,6 +16,18 @@
 
 @font-face {
 	font-family: 'proxima_nova';
+	src: url('./assets/fonts/Proxima-Nova-Sbold.woff2');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'proxima_nova';
+	src: url('./assets/fonts/Proxima-Nova-Sbold.woff2');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'proxima_nova';
 	src: url('./assets/fonts/ProximaNova-Medium.woff2');
 	font-weight: 400;
 }
@@ -78,13 +90,14 @@ a {
 .link {
 	transition: 300ms;
 	border-bottom: 1px solid transparent;
+	width: fit-content;
 }
 
 .link:hover {
 	border-color: #111;
 }
 
-.dark .link:hover {
+.dark header .link:hover {
 	border-color: white;
 }
 
@@ -94,11 +107,7 @@ a {
 }
 
 .sublink:hover {
-	border-color: white;
-}
-
-.dark .sublink:hover {
-	border-color: #111;
+	border-color: #777777;
 }
 
 .active {

@@ -12,7 +12,10 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 	const [activeLink, setActiveLink] = useState('/');
 	const [isSubmenuOpen, setSubmenuOpen] = useState(false);
-	const [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState(() => {
+		const storedDarkMode = window.localStorage.getItem('darkMode');
+		return storedDarkMode ? JSON.parse(storedDarkMode) : false;
+	});
 	const location = useLocation();
 	const imageTypes = ['Street', 'Landscape', 'Nature', 'Portraits', 'Urban'];
 
@@ -43,6 +46,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 			document.body.classList.remove('dark');
 		}
 		document.body.classList.add('transition-colors');
+
+		// Store darkMode in local storage
+		window.localStorage.setItem('darkMode', JSON.stringify(darkMode));
 	}, [darkMode]);
 
 	return (
@@ -99,7 +105,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 
 			<header
 				className={`justify-between items-center transition-all duration-250 dark:text-white ${
-					isImageTypePath ? 'mb-10 p-4' : 'mb-10 p-10'
+					isImageTypePath ? 'p-4' : 'p-10'
 				} z-50 relative md:flex hidden max-w-8xl mx-auto ${
 					location.pathname === '/photo'
 						? 'text-white'
@@ -208,7 +214,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 				className={`w-full h-full text-left transition-transform duration-300 ease-out transform fixed bg-[#fbfbfb] top-0 left-0 p-6 py-8 font-head md:hidden z-40 dark:text-black ${
 					navbarOpen ? 'translate-x-0' : 'translate-x-full'
 				}`}>
-				<ul className='flex flex-col gap-8 tracking-wider text-lg font-head'>
+				<ul
+					className='flex flex-col gap-8 tracking-wider text-lg font-head'
+					style={{ width: 'fit-content' }}>
 					<Link to='/' className={`link ml-3`} onClick={handleClick}>
 						<li>About</li>
 					</Link>
@@ -217,9 +225,11 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						<li>Work</li>
 					</Link>
 
-					<Link to='/photo' className={`link`} onClick={handleClick}>
-						<li className='mb-4'>+ Photo</li>
-						<ul className='ml-8 flex flex-col gap-3'>
+					<li>
+						<Link to='/photo' className='link' onClick={handleClick}>
+							+ Photo
+						</Link>
+						<ul className='ml-8 flex flex-col gap-3 mt-3'>
 							{imageTypes.map((type) => (
 								<li key={type}>
 									<Link
@@ -231,7 +241,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 								</li>
 							))}
 						</ul>
-					</Link>
+					</li>
 
 					<Link
 						to='/contact'

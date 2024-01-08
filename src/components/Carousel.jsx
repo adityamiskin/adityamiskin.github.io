@@ -49,7 +49,7 @@ const Carousel = ({ slides }) => {
 	}, [slides]);
 
 	return (
-		<section className='flex items-center h-[600px] md:overflow-x-hidden md:absolute w-full relative px-4 fade-in'>
+		<section className='flex items-center h-[600px] md:overflow-x-hidden md:absolute w-full relative px-4 fade-in mt-10'>
 			{current !== 0 && (
 				<button
 					className='bg-black p-4 fixed left-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex transition-opacity duration-300'
