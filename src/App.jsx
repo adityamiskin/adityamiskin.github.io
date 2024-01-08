@@ -8,6 +8,7 @@ import AnimatedCursor from 'react-animated-cursor';
 import Carousel from './components/Carousel';
 
 import Work from './pages/Work';
+import NotFound from './pages/NotFound';
 
 function App() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -82,6 +83,7 @@ function App() {
 						element={<Carousel slides={carouselImages[index]} />}
 					/>
 				))}
+				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
 	);

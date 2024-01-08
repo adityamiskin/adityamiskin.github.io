@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Anya from '../assets/images/anya.png';
 
 const About = () => {
 	return (
-		<section className='md:w-9/12 w-full max-w-3xl mx-auto flex flex-col p-4 md:p-8 mb-14 mt-10'>
+		<section className='md:w-9/12 w-full max-w-3xl mx-auto flex flex-col p-4 md:p-8 mb-14 mt-10 relative'>
 			<h2 className='font-head font-semibold text-3xl mb-6'>About</h2>
 			<div className='flex mx-auto gap-6 flex-col md:flex-row'>
 				<div className='tracking-wide text-sm order-2 md:order-1'>
@@ -31,6 +32,11 @@ const About = () => {
 					className='md:w-1/2 md:h-1/2 md:p-4 md:max-w-96 md:max-h-96 order-1 md:order-2 w-full h-full'
 				/>
 			</div>
+			<img
+				src={Anya}
+				alt=''
+				className='absolute w-32 left-[-7rem] bottom-[12rem] hidden md:block'
+			/>
 		</section>
 	);
 };
