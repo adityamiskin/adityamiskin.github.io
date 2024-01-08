@@ -60,14 +60,12 @@ const Photo = () => {
 				style={{ opacity: isMouseLeft ? 1 : 0 }}>
 				<FaChevronLeft className='text-lg text-white' />
 			</button>
-			)
 			<button
 				onClick={nextImage}
 				className='bg-black p-4 fixed right-10 top-1/2 transform -translate-y-1/2 transition-opacity duration-300 z-50'
 				style={{ opacity: !isMouseLeft ? 1 : 0 }}>
 				<FaChevronRight className='text-lg text-white' />
 			</button>
-			)
 			<Link
 				to={`/photo/${imageTypes[
 					currentImage % imageTypes.length
