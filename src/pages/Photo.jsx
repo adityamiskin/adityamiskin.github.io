@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const Photo = () => {
 	const [currentImage, setCurrentImage] = useState(0);
-	// const images = [Test, Test1, Test2, Test3, Test4];
 	const images = [
 		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632731/test_hjtzaw.webp',
 		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632729/test7_fasrqt.webp',
@@ -44,7 +43,9 @@ const Photo = () => {
 	return (
 		<section className='relative'>
 			{images.map((image, index) => (
-				<Link to={`/photo/${imageTypes[index].toLowerCase()}`} key={index}>
+				<Link
+					to={`/photo/${imageTypes[currentImage].toLowerCase()}`}
+					key={index}>
 					<img
 						src={image}
 						alt=''
@@ -66,14 +67,11 @@ const Photo = () => {
 				style={{ opacity: !isMouseLeft ? 1 : 0 }}>
 				<FaChevronRight className='text-lg text-white' />
 			</button>
-			<Link
-				to={`/photo/${imageTypes[
-					currentImage % imageTypes.length
-				].toLowerCase()}`}>
+			<Link to={`/photo/${imageTypes[currentImage].toLowerCase()}`}>
 				<div className='fixed bottom-0 left-0 bg-white text-black px-6 py-2 tracking-[0.25em] z-50'>
 					<span className='text-[#111] opacity-50'>PHOTO / </span>
 
-					{imageTypes[currentImage % imageTypes.length]}
+					{imageTypes[currentImage]}
 				</div>
 			</Link>
 		</section>
