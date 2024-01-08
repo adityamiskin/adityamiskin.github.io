@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 
 const Carousel = ({ slides }) => {
 	const [current, setCurrent] = useState(0);
@@ -7,6 +8,7 @@ const Carousel = ({ slides }) => {
 	const [offset, setOffset] = useState(0);
 	const imageRefs = useRef([]);
 	const [isMouseLeft, setIsMouseLeft] = useState(false);
+	const location = useLocation();
 
 	const gap = 8;
 
@@ -47,6 +49,11 @@ const Carousel = ({ slides }) => {
 	useEffect(() => {
 		imageRefs.current = imageRefs.current.slice(0, slides.length);
 	}, [slides]);
+
+	useEffect(() => {
+		setCurrent(0);
+		setOffset(0);
+	}, [location.pathname]);
 
 	return (
 		<section className='flex items-center h-[600px] md:overflow-x-hidden md:absolute w-full relative px-4 fade-in mt-10'>
