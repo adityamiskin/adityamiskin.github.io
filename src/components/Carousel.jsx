@@ -61,7 +61,8 @@ const Carousel = ({ slides }) => {
 				<button
 					className='bg-black p-4 fixed left-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex transition-opacity duration-300'
 					onClick={prevSlide}
-					style={{ opacity: isMouseLeft ? 1 : 0 }}>
+					style={{ opacity: isMouseLeft ? 1 : 0 }}
+					aria-label='Go left button'>
 					<FaChevronLeft className='text-lg text-white' />
 				</button>
 			)}
@@ -69,7 +70,8 @@ const Carousel = ({ slides }) => {
 			<button
 				className='bg-black p-4 fixed right-10 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex transition-opacity duration-300'
 				onClick={nextSlide}
-				style={{ opacity: !isMouseLeft ? 1 : 0 }}>
+				style={{ opacity: !isMouseLeft ? 1 : 0 }}
+				aria-label='Go right button'>
 				<FaChevronRight className='text-lg text-white' />
 			</button>
 			<div

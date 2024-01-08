@@ -77,7 +77,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						</h1>
 					</Link>
 					<div className='flex items-center gap-4'>
-						<button onClick={() => setDarkMode(!darkMode)}>
+						<button
+							onClick={() => setDarkMode(!darkMode)}
+							aria-label='Dark mode toggle'>
 							{darkMode ? (
 								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
 							) : (
@@ -86,6 +88,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						</button>
 						<button
 							onClick={() => setNavbarOpen((prevState) => !prevState)}
+							aria-label='Menu toggle'
 							className={`relative z-50 ${navbarOpen ? 'text-black' : null}`}>
 							<FiMenu className='text-3xl' />
 						</button>
@@ -103,7 +106,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 				</h2>
 			</div>
 
-			<header
+			<nav
 				className={`justify-between items-center transition-all duration-250 dark:text-white ${
 					isImageTypePath ? 'p-4' : 'p-10'
 				} z-50 relative md:flex hidden max-w-8xl mx-auto ${
@@ -115,115 +118,138 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 				}`}>
 				<div className='text-4xl'>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<h1 className='tracking-widest font-head font-semibold'>
+						<header className='tracking-widest font-head font-semibold'>
 							ADITYA MISKIN
-						</h1>
+						</header>
 					</Link>
 				</div>
 
 				<div>
 					<ul className='flex gap-8 items-center tracking-wider text-base font-head'>
-						<Link
-							to='/'
-							className={`link ${
-								activeLink === '/' ? 'active' : ''
-							} underline-offset-2`}
-							onClick={() => handleClick('/')}>
-							<li>About</li>
-						</Link>
-
-						<Link
-							to='/work'
-							className={`link ${
-								activeLink === '/work' ? 'active' : ''
-							} underline-offset-2`}
-							onClick={() => handleClick('/work')}>
-							<li>Work</li>
-						</Link>
-						<div
-							className={`relative extra ${isSubmenuOpen ? 'open' : ''}`}
-							onMouseEnter={() => setSubmenuOpen(true)}
-							onMouseLeave={() => setSubmenuOpen(false)}>
+						<li>
 							<Link
-								to='/photo'
+								to='/'
 								className={`link ${
-									activeLink === '/photo' ? 'active' : ''
+									activeLink === '/' ? 'active' : ''
 								} underline-offset-2`}
-								onClick={() => {
-									handleClick('/photo');
-								}}>
-								<li>+ Photo</li>
+								onClick={() => handleClick('/')}>
+								About
 							</Link>
-							{isSubmenuOpen && (
-								<ul className='absolute flex flex-col p-6 text-sm w-36 gap-4 left-[-35px] mt-2 bg-black text-white border-t-2 border-transparent dark:bg-[#fbfbfb] dark:text-black'>
-									{imageTypes.map((type) => (
-										<li key={type}>
-											<Link
-												to={`/photo/${type.toLowerCase()}`}
-												className={`sublink ${
-													activeLink === `/photo/${type.toLowerCase()}`
-														? 'active'
-														: ''
-												} underline-offset-2 decoration-white`}
-												onClick={() =>
-													handleClick(`/photo/${type.toLowerCase()}`)
-												}>
-												{type}
-											</Link>
-										</li>
-									))}
-								</ul>
-							)}
-						</div>
-						<Link
-							to='/contact'
-							className={`link ${
-								activeLink === '/contact' ? 'active' : ''
-							} underline-offset-2`}
-							onClick={() => handleClick('/contact')}>
-							<li>Contact</li>
-						</Link>
+						</li>
 
-						<button onClick={() => setDarkMode(!darkMode)}>
-							{darkMode ? (
-								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
-							) : (
-								<FiMoon className='text-2xl transition ease-in-out duration-500 stroke-1 stroke-violet-500 fill-violet-500' />
-							)}
-						</button>
+						<li>
+							<Link
+								to='/work'
+								className={`link ${
+									activeLink === '/work' ? 'active' : ''
+								} underline-offset-2`}
+								onClick={() => handleClick('/work')}>
+								Work
+							</Link>
+						</li>
+
+						<li>
+							<div
+								className={`relative extra ${isSubmenuOpen ? 'open' : ''}`}
+								onMouseEnter={() => setSubmenuOpen(true)}
+								onMouseLeave={() => setSubmenuOpen(false)}>
+								<Link
+									to='/photo'
+									className={`link ${
+										activeLink === '/photo' ? 'active' : ''
+									} underline-offset-2`}
+									onClick={() => {
+										handleClick('/photo');
+									}}>
+									+ Photo
+								</Link>
+
+								{isSubmenuOpen && (
+									<ul className='absolute flex flex-col p-6 text-sm w-36 gap-4 left-[-35px] mt-2 bg-black text-white border-t-2 border-transparent dark:bg-[#fbfbfb] dark:text-black'>
+										{imageTypes.map((type) => (
+											<li key={type}>
+												<Link
+													to={`/photo/${type.toLowerCase()}`}
+													className={`sublink ${
+														activeLink === `/photo/${type.toLowerCase()}`
+															? 'active'
+															: ''
+													} underline-offset-2 decoration-white`}
+													onClick={() =>
+														handleClick(`/photo/${type.toLowerCase()}`)
+													}>
+													{type}
+												</Link>
+											</li>
+										))}
+									</ul>
+								)}
+							</div>
+						</li>
+
+						<li>
+							<Link
+								to='/contact'
+								className={`link ${
+									activeLink === '/contact' ? 'active' : ''
+								} underline-offset-2`}
+								onClick={() => handleClick('/contact')}>
+								Contact
+							</Link>
+						</li>
+
+						<li className='flex'>
+							<button
+								onClick={() => setDarkMode(!darkMode)}
+								aria-label='Dark Mode toggle'>
+								{darkMode ? (
+									<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
+								) : (
+									<FiMoon className='text-2xl transition ease-in-out duration-500 stroke-1 stroke-violet-500 fill-violet-500' />
+								)}
+							</button>
+						</li>
 
 						<li className='text-xl flex gap-4'>
-							<Link to='https://github.com/adityamiskin'>
+							<Link to='https://github.com/adityamiskin' aria-label='Github'>
 								<FaGithub />
 							</Link>
-							<Link to='https://twitter.com/AdityaMiskin3'>
+							<Link to='https://twitter.com/AdityaMiskin3' aria-label='Twitter'>
 								<FaTwitter />
 							</Link>
-							<Link to='https://www.instagram.com/by.miskin'>
+							<Link
+								to='https://www.instagram.com/by.miskin'
+								aria-label='Instagram'>
 								<FaInstagram />
 							</Link>
-							<Link to='https://www.linkedin.com/in/aditya-miskin/'>
+							<Link
+								to='https://www.linkedin.com/in/aditya-miskin/'
+								aria-label='LinkedIn'>
 								<FaLinkedinIn />
 							</Link>
 						</li>
 					</ul>
 				</div>
-			</header>
+			</nav>
 
-			<div
+			<aside
 				className={`w-full h-full text-left transition-transform duration-300 ease-out transform fixed bg-[#fbfbfb] top-0 left-0 p-6 py-8 font-head md:hidden z-40 dark:text-black ${
 					navbarOpen ? 'translate-x-0' : 'translate-x-full'
 				}`}>
 				<ul
 					className='flex flex-col gap-8 tracking-wider text-lg font-head'
 					style={{ width: 'fit-content' }}>
-					<Link to='/' className={`link ml-3`} onClick={handleClick}>
-						<li>About</li>
-					</Link>
+					<li>
+						<Link to='/' className={`link ml-3`} onClick={handleClick}>
+							About
+						</Link>
+					</li>
 
-					<Link to='/work' className={`link ml-3`} onClick={handleClick}>
-						<li>Work</li>
-					</Link>
+					<li>
+						<Link to='/work' className={`link ml-3`} onClick={handleClick}>
+							Work
+						</Link>
+					</li>
 
 					<li>
 						<Link to='/photo' className='link' onClick={handleClick}>
@@ -243,31 +269,37 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						</ul>
 					</li>
 
-					<Link
-						to='/contact'
-						className={`link ${
-							activeLink === '/contact' ? 'active' : ''
-						} underline-offset-2`}
-						onClick={() => handleClick('/contact')}>
-						<li>Contact</li>
-					</Link>
+					<li>
+						<Link
+							to='/contact'
+							className={`link ${
+								activeLink === '/contact' ? 'active' : ''
+							} underline-offset-2`}
+							onClick={() => handleClick('/contact')}>
+							Contact
+						</Link>
+					</li>
 
 					<li className='text-xl flex gap-4'>
-						<Link to='https://github.com/adityamiskin'>
+						<Link to='https://github.com/adityamiskin' aria-label='Github'>
 							<FaGithub />
 						</Link>
-						<Link to='https://twitter.com/AdityaMiskin3'>
+						<Link to='https://twitter.com/AdityaMiskin3' aria-label='Twitter'>
 							<FaTwitter />
 						</Link>
-						<Link to='https://www.instagram.com/by.miskin'>
+						<Link
+							to='https://www.instagram.com/by.miskin'
+							aria-label='Instagram'>
 							<FaInstagram />
 						</Link>
-						<Link to='https://www.linkedin.com/in/aditya-miskin/'>
+						<Link
+							to='https://www.linkedin.com/in/aditya-miskin/'
+							aria-label='LinkedIn'>
 							<FaLinkedinIn />
 						</Link>
 					</li>
 				</ul>
-			</div>
+			</aside>
 		</>
 	);
 };
