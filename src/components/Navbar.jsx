@@ -73,9 +73,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					<div className='flex items-center gap-4'>
 						<button onClick={() => setDarkMode(!darkMode)}>
 							{darkMode ? (
-								<FiSun className='text-2xl transition ease-in-out duration-500' />
+								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
 							) : (
-								<FiMoon className='text-2xl transition ease-in-out duration-500' />
+								<FiMoon className='text-2xl transition ease-in-out duration-500 stroke-1 stroke-violet-500 fill-violet-500' />
 							)}
 						</button>
 						<button
@@ -180,9 +180,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 
 						<button onClick={() => setDarkMode(!darkMode)}>
 							{darkMode ? (
-								<FiSun className='text-2xl transition ease-in-out duration-500' />
+								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
 							) : (
-								<FiMoon className='text-2xl transition ease-in-out duration-500' />
+								<FiMoon className='text-2xl transition ease-in-out duration-500 stroke-1 stroke-violet-500 fill-violet-500' />
 							)}
 						</button>
 
