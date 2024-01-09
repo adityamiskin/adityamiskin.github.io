@@ -74,9 +74,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 				}`}>
 				<div className='text-4xl'>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<header className='tracking-widest font-head font-semibold'>
+						<h1 className='tracking-widest font-head font-semibold'>
 							ADITYA MISKIN
-						</header>
+						</h1>
 					</Link>
 				</div>
 
