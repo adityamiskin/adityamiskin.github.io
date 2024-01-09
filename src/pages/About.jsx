@@ -11,9 +11,9 @@ const About = () => {
 					<p className='mb-4 mt-2'>Hi, I'm Aditya.</p>
 					<p className='mb-8 tracking-wide leading-normal'>
 						I'm a software engineer living in Bengaluru, IN. I’m also a hobbyist
-						📸 photographer travelling the world, documenting this 💖 beautiful
-						planet of ours. In my free time, I play a lot of 🎮 games and learn
-						🎸guitar. Check out my resume over{' '}
+						photographer travelling the world, documenting this beautiful planet
+						of ours. In my free time, I play a lot of games and learn guitar.
+						Check out my resume over{' '}
 						<Link
 							to='https://drive.google.com/file/d/1FNhPrthCFp8oFNeC0Ve9pj9fte2GKg1X/view?usp=sharing'
 							className='link-text'>

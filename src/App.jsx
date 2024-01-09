@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -6,7 +6,6 @@ import Contact from './pages/Contact';
 import Photo from './pages/Photo';
 import AnimatedCursor from 'react-animated-cursor';
 import Carousel from './components/Carousel';
-
 import Work from './pages/Work';
 import NotFound from './pages/NotFound';
 
