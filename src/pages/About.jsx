@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Anya from '../assets/images/anya.png';
+// import Anya from '../assets/images/anya.png';
 
 const About = () => {
 	return (
@@ -32,11 +32,11 @@ const About = () => {
 					className='md:w-1/2 md:h-1/2 md:p-4 md:max-w-96 md:max-h-96 order-1 md:order-2 w-full h-full'
 				/>
 			</div>
-			<img
+			{/* <img
 				src={Anya}
 				alt=''
 				className='absolute w-32 left-[-7rem] bottom-[12rem] hidden md:block'
-			/>
+			/> */}
 		</section>
 	);
 };
