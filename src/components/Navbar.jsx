@@ -62,50 +62,6 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					}}></div>
 			)}
 
-			<div className='flex md:hidden flex-col mb-8 p-4 relative '>
-				<div
-					className={`flex justify-between mb-2 ${
-						location.pathname === '/photo'
-							? 'text-white'
-							: location.pathname.startsWith('/photo/')
-							? 'text-black'
-							: 'text-black'
-					} dark:text-white`}>
-					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<h1 className='tracking-widest font-head font-semibold text-3xl z-20 relative'>
-							ADITYA MISKIN
-						</h1>
-					</Link>
-					<div className='flex items-center gap-4'>
-						<button
-							onClick={() => setDarkMode(!darkMode)}
-							aria-label='Dark mode toggle'>
-							{darkMode ? (
-								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
-							) : (
-								<FiMoon className='text-2xl transition ease-in-out duration-500 stroke-1 stroke-violet-500 fill-violet-500' />
-							)}
-						</button>
-						<button
-							onClick={() => setNavbarOpen((prevState) => !prevState)}
-							aria-label='Menu toggle'
-							className={`relative z-50 ${navbarOpen ? 'text-black' : null}`}>
-							<FiMenu className='text-3xl' />
-						</button>
-					</div>
-				</div>
-				<h2
-					className={`tracking-[7.5px] text-[#111] font-thin z-30 relative ${
-						location.pathname === '/photo'
-							? 'text-white'
-							: location.pathname.startsWith('/photo/')
-							? 'text-black'
-							: 'text-black'
-					} dark:text-white`}>
-					TELLING STORIES IN EVERY MEDIUM
-				</h2>
-			</div>
-
 			<nav
 				className={`justify-between items-center transition-all duration-250 dark:text-white ${
 					isImageTypePath ? 'p-4' : 'p-10'
@@ -231,6 +187,50 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					</ul>
 				</div>
 			</nav>
+
+			<div className='flex md:hidden flex-col mb-8 p-4 relative '>
+				<div
+					className={`flex justify-between mb-2 ${
+						location.pathname === '/photo'
+							? 'text-white'
+							: location.pathname.startsWith('/photo/')
+							? 'text-black'
+							: 'text-black'
+					} dark:text-white`}>
+					<Link to='/' className='' onClick={() => handleClick('/')}>
+						<h1 className='tracking-widest font-head font-semibold text-3xl z-20 relative'>
+							ADITYA MISKIN
+						</h1>
+					</Link>
+					<div className='flex items-center gap-4'>
+						<button
+							onClick={() => setDarkMode(!darkMode)}
+							aria-label='Dark mode toggle'>
+							{darkMode ? (
+								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
+							) : (
+								<FiMoon className='text-2xl transition ease-in-out duration-500 stroke-1 stroke-violet-500 fill-violet-500' />
+							)}
+						</button>
+						<button
+							onClick={() => setNavbarOpen((prevState) => !prevState)}
+							aria-label='Menu toggle'
+							className={`relative z-50 ${navbarOpen ? 'text-black' : null}`}>
+							<FiMenu className='text-3xl' />
+						</button>
+					</div>
+				</div>
+				<h2
+					className={`tracking-[7.5px] text-[#111] font-thin z-30 relative ${
+						location.pathname === '/photo'
+							? 'text-white'
+							: location.pathname.startsWith('/photo/')
+							? 'text-black'
+							: 'text-black'
+					} dark:text-white`}>
+					TELLING STORIES IN EVERY MEDIUM
+				</h2>
+			</div>
 
 			<aside
 				className={`w-full h-full text-left transition-transform duration-300 ease-out transform fixed bg-[#fbfbfb] top-0 left-0 p-6 py-8 font-head md:hidden z-40 dark:text-black ${
