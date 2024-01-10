@@ -115,13 +115,6 @@ const Work = () => {
 
 	return (
 		<section className='md:px-10 p-4 max-w-8xl mx-auto mb-10 mt-8'>
-			<div className='border-2 py-4 mb-12 w-2/3 mx-auto max-w-lg'>
-				<h2 className='font-head font-semibold text-4xl text-center'>
-					Under Development...＞﹏＜
-				</h2>
-				<h2 className='text-center text-5xl mb-6'>...</h2>
-			</div>
-
 			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 md:px-0 mb-10'>
 				<div className='professional-exp'>
 					<h2 className='text-4xl font-head font-semibold mb-8'>
