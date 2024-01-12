@@ -4,7 +4,6 @@ import {
 	FaInstagram,
 	FaLinkedinIn,
 	FaGithub,
-	FaBars,
 } from 'react-icons/fa6';
 import { FiMenu, FiSun, FiMoon } from 'react-icons/fi';
 import { Link, useLocation } from 'react-router-dom';
@@ -28,17 +27,6 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 		setNavbarOpen(false); // Close the menu when a link is clicked
 	};
 
-	// Extract image type from location
-	const imageType = location.pathname.split('/')[2];
-
-	// Convert imageType to lowercase if it exists
-	const lowerCaseImageType = imageType ? imageType.toLowerCase() : '';
-
-	// Convert imageTypes to lowercase and check if the current path is an image type path
-	const isImageTypePath = imageTypes
-		.map((type) => type.toLowerCase())
-		.includes(lowerCaseImageType);
-
 	useEffect(() => {
 		if (darkMode) {
 			document.body.classList.add('dark');
@@ -53,23 +41,12 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 
 	return (
 		<>
-			{location.pathname === '/photo' && (
-				<div
-					className='fixed top-0 w-full h-1/4 left-0 z-20'
-					style={{
-						background:
-							'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 100%)',
-					}}></div>
-			)}
-
 			<nav
-				className={`justify-between items-center transition-all duration-250 dark:text-white ${
-					isImageTypePath ? 'p-4' : 'p-10'
-				} z-50 relative md:flex hidden max-w-8xl mx-auto ${
+				className={`justify-between items-center transition-all duration-250 dark:text-white p-10 z-50 relative md:flex hidden max-w-8xl mx-auto ${
 					location.pathname === '/photo'
-						? 'text-white'
+						? 'text-white p-4 dark-hover'
 						: location.pathname.startsWith('/photo/')
-						? 'text-black'
+						? 'text-black p-4'
 						: 'text-black'
 				}`}>
 				<div className='text-4xl'>
@@ -198,14 +175,15 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 							: 'text-black'
 					} dark:text-white`}>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<h1 className='tracking-widest font-head font-semibold text-3xl z-20 relative'>
+						<h1 className='tracking-widest font-head font-semibold text-3xl relative z-30'>
 							ADITYA MISKIN
 						</h1>
 					</Link>
-					<div className='flex items-center gap-4'>
+					<div className='flex items-center gap-4 '>
 						<button
 							onClick={() => setDarkMode(!darkMode)}
-							aria-label='Dark mode toggle'>
+							aria-label='Dark mode toggle'
+							className='z-30'>
 							{darkMode ? (
 								<FiSun className='text-2xl transition ease-in-out duration-500 stroke-2 fill-orange-400 stroke-orange-400' />
 							) : (

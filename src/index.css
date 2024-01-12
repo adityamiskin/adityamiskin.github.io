@@ -74,40 +74,32 @@ a {
 	transition: border-radius 0.15s cubic-bezier(0.215, 0.61, 0.355, 1),
 		box-shadow 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 	box-shadow: 0 1px #bdbdc5, inset 0 -1px #bdbdc5;
-}
 
-.link-text:hover {
-	color: #0e0e0f;
-	border-radius: 4px;
-	box-shadow: 0 0 0 1px rgba(189, 189, 197, 0.5),
-		inset 0 -40px rgba(189, 189, 197, 0.5);
-}
-
-.dark .link-text {
-	color: rgb(177, 177, 177);
+	&:hover {
+		color: #0e0e0f;
+		border-radius: 4px;
+		box-shadow: 0 0 0 1px rgba(189, 189, 197, 0.5),
+			inset 0 -40px rgba(189, 189, 197, 0.5);
+	}
 }
 
 .link {
 	transition: 300ms;
 	border-bottom: 1px solid transparent;
 	width: fit-content;
-}
 
-.link:hover {
-	border-color: #111;
-}
-
-.dark header .link:hover {
-	border-color: white;
+	&:hover {
+		border-color: #111;
+	}
 }
 
 .sublink {
 	transition: 300ms;
 	border-bottom: 1px solid transparent;
-}
 
-.sublink:hover {
-	border-color: #777777;
+	&:hover {
+		border-color: #777777;
+	}
 }
 
 .active {
@@ -115,27 +107,19 @@ a {
 	border-color: #111;
 }
 
-.dark .active {
-	border-color: white;
-}
-
 .extra {
 	position: relative;
-}
 
-.extra.open::before {
-	content: '';
-	position: absolute;
-	top: 22px; /* Adjust this value to position the triangle */
-	left: 50%;
-	transform: translateX(-50%);
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 10px solid black; /* Match this color with the background color of the submenu */
-}
-
-.dark .extra.open::before {
-	border-bottom: 10px solid #fbfbfb; /* Match this color with the background color of the submenu */
+	&.open::before {
+		content: '';
+		position: absolute;
+		top: 22px; /* Adjust this value to position the triangle */
+		left: 50%;
+		transform: translateX(-50%);
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid black; /* Match this color with the background color of the submenu */
+	}
 }
 
 body {
@@ -150,11 +134,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.dark {
-	background-color: black;
-	color: white;
-}
-
 .error {
 	color: red;
 	font-size: 12px;
@@ -162,4 +141,46 @@ body {
 
 .transition-colors {
 	transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-hover {
+	.link:hover {
+		border-color: white;
+	}
+}
+
+.dark {
+	background-color: black;
+	color: white;
+
+	.link-text {
+		color: rgb(177, 177, 177);
+	}
+
+	.link:hover {
+		border-color: white;
+	}
+
+	header .link:hover {
+		border-color: white;
+	}
+
+	.active {
+		border-color: white;
+	}
+
+	.extra.open::before {
+		border-bottom: 10px solid #fbfbfb; /* Match this color with the background color of the submenu */
+	}
+
+	body {
+		background-color: black;
+		color: white;
+	}
+
+	.dark-hover {
+		.link:hover {
+			border-color: white;
+		}
+	}
 }
