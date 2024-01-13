@@ -114,7 +114,7 @@ const Work = () => {
 	];
 
 	return (
-		<section className='md:px-10 p-4 max-w-8xl mx-auto mb-10 mt-8'>
+		<section className='md:px-10 p-4 max-w-8xl mx-auto mb-10 mt-8 md:mt-40'>
 			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 md:px-0 mb-10'>
 				<div className='professional-exp'>
 					<h2 className='text-4xl font-head font-semibold mb-8'>

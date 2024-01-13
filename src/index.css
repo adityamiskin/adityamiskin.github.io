@@ -84,7 +84,7 @@ a {
 }
 
 .link {
-	transition: 300ms;
+	transition: 250ms;
 	border-bottom: 1px solid transparent;
 	width: fit-content;
 

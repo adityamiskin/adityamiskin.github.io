@@ -18,6 +18,21 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 	const location = useLocation();
 	const imageTypes = ['Street', 'Landscape', 'Nature', 'Portraits', 'Urban'];
 
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY;
+			setIsScrolled(currentScrollY > 45);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	useEffect(() => {
 		setActiveLink(location.pathname);
 	}, [location]);
@@ -42,14 +57,21 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 	return (
 		<>
 			<nav
-				className={`justify-between items-center transition-all duration-250 dark:text-white p-10 z-50 relative md:flex hidden max-w-8xl mx-auto ${
+				className={`justify-between top-0 fixed items-center transition-all duration-250 w-full dark:text-white p-10 z-50 md:flex hidden max-w-8xl mx-auto ${
+					isScrolled
+						? 'bg-black text-white dark:bg-[#fbfbfb] dark:text-black'
+						: ''
+				} ${
 					location.pathname === '/photo'
 						? 'text-white p-4 dark-hover'
 						: location.pathname.startsWith('/photo/')
 						? 'text-black p-4'
 						: 'text-black'
 				}`}>
-				<div className='text-4xl'>
+				<div
+					className={`text-4xl ${
+						isScrolled ? 'text-white dark:text-black' : ''
+					}`}>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
 						<h1 className='tracking-widest font-head font-semibold'>
 							ADITYA MISKIN
@@ -57,7 +79,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					</Link>
 				</div>
 
-				<div>
+				<div className={`${isScrolled ? ' text-white  dark:text-black' : ''}`}>
 					<ul className='flex gap-8 items-center tracking-wider text-base font-head'>
 						<li>
 							<Link
@@ -165,7 +187,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 				</div>
 			</nav>
 
-			<div className='flex md:hidden flex-col mb-8 p-4 relative '>
+			<div className={`flex md:hidden flex-col mb-8 p-4 relative  `}>
 				<div
 					className={`flex justify-between mb-2 ${
 						location.pathname === '/photo'

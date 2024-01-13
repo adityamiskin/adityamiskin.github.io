@@ -142,7 +142,7 @@ const Contact = () => {
 	};
 
 	return (
-		<section className='flex justify-center flex-col mb-20 p-4 mt-10'>
+		<section className='flex justify-center flex-col mb-20 p-4 md:mt-40'>
 			<SocialMediaLinks
 				isHovered={isHovered}
 				setIsHovered={setIsHovered}

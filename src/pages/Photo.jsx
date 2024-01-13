@@ -41,48 +41,55 @@ const Photo = () => {
 	}, []);
 
 	return (
-		<section className='relative'>
-			<Link to={`/photo/${imageTypes[currentImage].toLowerCase()}`}>
-				{images.map((image, index) => (
-					<div
-						className='fixed top-0 w-full h-full left-0 z-20'
-						style={{
-							background:
-								'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%)',
-						}}
-						key={index}>
-						<img
-							src={image}
-							alt=''
-							className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
-								currentImage === index ? 'opacity-100' : 'opacity-0'
-							}`}
-						/>
-					</div>
-				))}
-			</Link>
-			<button
-				onClick={previousImage}
-				className='bg-black p-4 fixed left-10 top-1/2 transform -translate-y-1/2 transition-opacity duration-300 z-30'
-				style={{ opacity: isMouseLeft ? 1 : 0 }}
-				aria-label='Go left button'>
-				<FaChevronLeft className='text-lg text-white' />
-			</button>
-			<button
-				onClick={nextImage}
-				className='bg-black p-4 fixed right-10 top-1/2 transform -translate-y-1/2 transition-opacity duration-300 z-30'
-				style={{ opacity: !isMouseLeft ? 1 : 0 }}
-				aria-label='Go right button'>
-				<FaChevronRight className='text-lg text-white' />
-			</button>
-			<Link to={`/photo/${imageTypes[currentImage].toLowerCase()}`}>
-				<div className='fixed bottom-0 left-0 bg-white text-black px-6 py-2 tracking-[0.25em] z-50'>
-					<span className='text-[#111] opacity-50'>PHOTO / </span>
+		<>
+			<div className='flex items-center justify-center overflow-hidden fixed top-1/2 w-full z-30'>
+				<h2 className='md:text-6xl text-5xl text-white text-center z-50 font-head font-semibold tracking-widest relative w-full'>
+					{imageTypes[currentImage]}
+				</h2>
+			</div>
+			<section className='relative overflow-hidden'>
+				<Link to={`/photo/${imageTypes[currentImage].toLowerCase()}`}>
+					{images.map((image, index) => (
+						<div
+							className='fixed top-0 w-full h-full left-0 z-20'
+							style={{
+								background:
+									'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%)',
+							}}
+							key={index}>
+							<img
+								src={image}
+								alt=''
+								className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
+									currentImage === index ? 'opacity-100' : 'opacity-0'
+								}`}
+							/>
+						</div>
+					))}
+				</Link>
+				<button
+					onClick={previousImage}
+					className='bg-black p-4 fixed left-5 md:left-10 top-1/2 transform -translate-y-1/2 transition-opacity duration-250 z-30'
+					style={{ opacity: isMouseLeft ? 1 : 0 }}
+					aria-label='Go left button'>
+					<FaChevronLeft className='text-lg text-white' />
+				</button>
+				<button
+					onClick={nextImage}
+					className='bg-black p-4 fixed right-5 md:right-10 top-1/2 transform -translate-y-1/2 transition-opacity duration-250 z-30'
+					style={{ opacity: !isMouseLeft ? 1 : 0 }}
+					aria-label='Go right button'>
+					<FaChevronRight className='text-lg text-white' />
+				</button>
+				<Link to={`/photo/${imageTypes[currentImage].toLowerCase()}`}>
+					<div className='fixed bottom-0 right-0 bg-white text-black px-6 py-2 tracking-[0.25em] z-50'>
+						<span className='text-[#111] opacity-50'>PHOTO / </span>
 
-					{imageTypes[currentImage].toUpperCase()}
-				</div>
-			</Link>
-		</section>
+						{imageTypes[currentImage].toUpperCase()}
+					</div>
+				</Link>
+			</section>
+		</>
 	);
 };
 
