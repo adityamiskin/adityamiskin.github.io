@@ -197,9 +197,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 							: 'text-black'
 					} dark:text-white`}>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<h1 className='tracking-widest font-head font-semibold text-3xl relative z-30'>
+						<header className='tracking-widest font-head font-semibold text-3xl relative z-30'>
 							ADITYA MISKIN
-						</h1>
+						</header>
 					</Link>
 					<div className='flex items-center gap-4 '>
 						<button

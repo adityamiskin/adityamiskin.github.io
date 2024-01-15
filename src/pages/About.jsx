@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const About = () => {
 	return (
 		<section className='md:w-9/12 w-full max-w-3xl mx-auto flex flex-col p-4 md:p-8 mb-14 relative my-auto md:mt-40 mt-8'>
-			<h2 className='font-head font-semibold text-3xl mb-6'>About</h2>
+			<h1 className='font-head font-semibold text-3xl mb-6'>About</h1>
 			<div className='flex mx-auto gap-6 flex-col md:flex-row'>
 				<div className='tracking-wide text-sm order-2 md:order-1'>
 					<p className='mb-4 mt-2'>Hi, I'm Aditya.</p>
@@ -21,7 +21,9 @@ const About = () => {
 						</Link>
 					</p>
 
-					<p className='mb-3 font-head text-lg font-semibold'>Toss me a line</p>
+					<h3 className='mb-3 font-head text-lg font-semibold'>
+						Toss me a line
+					</h3>
 
 					<p className='italic'>adityamiskin98@gmail.com</p>
 				</div>
@@ -32,11 +34,6 @@ const About = () => {
 					className='md:w-1/2 md:h-1/2 md:p-4 md:max-w-96 md:max-h-96 order-1 md:order-2 w-full h-full'
 				/>
 			</div>
-			{/* <img
-				src={Anya}
-				alt=''
-				className='absolute w-32 left-[-7rem] bottom-[12rem] hidden md:block'
-			/> */}
 		</section>
 	);
 };
