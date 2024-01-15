@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adityamiskin/sitemap.xml
+Sitemap: https://adityamiskin.com/sitemap.xml
