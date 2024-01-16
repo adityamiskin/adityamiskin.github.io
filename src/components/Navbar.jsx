@@ -167,25 +167,25 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 
 						<li className='text-xl flex gap-4'>
 							<a
-								to='https://github.com/adityamiskin'
+								href='https://github.com/adityamiskin'
 								aria-label='Github'
 								target='_blank'>
 								<FaGithub />
 							</a>
 							<a
-								to='https://twitter.com/AdityaMiskin3'
+								href='https://twitter.com/AdityaMiskin3'
 								aria-label='Twitter'
 								target='_blank'>
 								<FaTwitter />
 							</a>
 							<a
-								to='https://www.instagram.com/by.miskin'
+								href='https://www.instagram.com/by.miskin'
 								aria-label='Instagram'
 								target='_blank'>
 								<FaInstagram />
 							</a>
 							<a
-								to='https://www.linkedin.com/in/aditya-miskin/'
+								href='https://www.linkedin.com/in/aditya-miskin/'
 								aria-label='LinkedIn'
 								target='_blank'>
 								<FaLinkedinIn />
