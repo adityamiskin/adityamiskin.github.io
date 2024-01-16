@@ -6,9 +6,13 @@ import CLI from '../assets/images/projects/cli.jpg';
 import Annote from '../assets/images/projects/annote.jpg';
 
 const Project = ({ project }) => (
-	<Link to='//www.github.com'>
+	<a href='//www.github.com' target='_blank' rrel='noopener noreferrer'>
 		<div className='flex flex-col p-4 border border-black dark:border-white h-full'>
-			<img src={project.image} alt='' className='object-cover mb-2' />
+			<img
+				src={project.image}
+				alt='project image'
+				className='object-cover mb-2'
+			/>
 			<div className='flex gap-2 items-baseline'>
 				<h3 className='font-head font-semibold text-2xl mb-2'>
 					{project.name}
@@ -19,7 +23,7 @@ const Project = ({ project }) => (
 			</div>
 			<p className='project-desc text-sm'>{project.description}</p>
 		</div>
-	</Link>
+	</a>
 );
 
 const ListItem = ({ item, type }) => (

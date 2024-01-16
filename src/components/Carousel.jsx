@@ -90,7 +90,7 @@ const Carousel = ({ slides }) => {
 							ref={(el) => (imageRefs.current[index] = el)}>
 							<img
 								src={slide}
-								alt='portrait'
+								alt={`Slide ${index + 1}`}
 								className='w-full md:h-[500px] 3xl:h-[800px] mb-3 z-40 transition-all'
 							/>
 							<p className='text-black mb-2 font-head font-semibold text-lg ml-4 md:ml-0 dark:text-white'>

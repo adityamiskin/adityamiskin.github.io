@@ -59,7 +59,7 @@ const Photo = () => {
 							key={index}>
 							<img
 								src={image}
-								alt=''
+								alt={`Image of ${imageTypes[currentImage]}`}
 								className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
 									currentImage === index ? 'opacity-100' : 'opacity-0'
 								}`}

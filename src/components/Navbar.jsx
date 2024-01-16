@@ -166,22 +166,30 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						</li>
 
 						<li className='text-xl flex gap-4'>
-							<Link to='https://github.com/adityamiskin' aria-label='Github'>
+							<a
+								to='https://github.com/adityamiskin'
+								aria-label='Github'
+								target='_blank'>
 								<FaGithub />
-							</Link>
-							<Link to='https://twitter.com/AdityaMiskin3' aria-label='Twitter'>
+							</a>
+							<a
+								to='https://twitter.com/AdityaMiskin3'
+								aria-label='Twitter'
+								target='_blank'>
 								<FaTwitter />
-							</Link>
-							<Link
+							</a>
+							<a
 								to='https://www.instagram.com/by.miskin'
-								aria-label='Instagram'>
+								aria-label='Instagram'
+								target='_blank'>
 								<FaInstagram />
-							</Link>
-							<Link
+							</a>
+							<a
 								to='https://www.linkedin.com/in/aditya-miskin/'
-								aria-label='LinkedIn'>
+								aria-label='LinkedIn'
+								target='_blank'>
 								<FaLinkedinIn />
-							</Link>
+							</a>
 						</li>
 					</ul>
 				</div>

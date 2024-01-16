@@ -5,7 +5,6 @@ import {
 	FaLinkedinIn,
 	FaGithub,
 } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -14,18 +13,22 @@ const SOCIAL_MEDIA_LINKS = [
 	{
 		url: 'https://www.github.com/adityamiskin',
 		icon: <FaGithub />,
+		ariaLabel: 'Github',
 	},
 	{
 		url: 'https://twitter.com/AdityaMiskin3',
 		icon: <FaTwitter />,
+		ariaLabel: 'Twitter',
 	},
 	{
 		url: 'https://www.instagram.com/by.miskin',
 		icon: <FaInstagram />,
+		ariaLabel: 'Instagram',
 	},
 	{
 		url: 'https://www.linkedin.com/in/aditya-miskin/',
 		icon: <FaLinkedinIn />,
+		ariaLabel: 'LinkedIn',
 	},
 ];
 
@@ -47,7 +50,13 @@ const SocialMediaLinks = ({
 				}`}
 				onMouseEnter={() => setActiveIndex(index)}
 				onMouseLeave={() => setActiveIndex(null)}>
-				<Link to={link.url}>{link.icon}</Link>
+				<a
+					href={link.url}
+					target='_blank'
+					rel='noopener noreferrer'
+					aria-label={link.ariaLabel}>
+					{link.icon}
+				</a>
 			</li>
 		))}
 	</ul>
