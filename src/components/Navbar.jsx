@@ -55,7 +55,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 	}, [darkMode]);
 
 	return (
-		<>
+		<header>
 			<nav
 				className={`justify-between top-0 fixed items-center transition-all duration-250 w-full dark:text-white p-10 z-50 md:flex hidden max-w-8xl mx-auto ${
 					isScrolled
@@ -197,9 +197,9 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 							: 'text-black'
 					} dark:text-white`}>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<header className='tracking-widest font-head font-semibold text-3xl relative z-30'>
+						<h1 className='tracking-widest font-head font-semibold text-3xl relative z-30'>
 							ADITYA MISKIN
-						</header>
+						</h1>
 					</Link>
 					<div className='flex items-center gap-4 '>
 						<button
@@ -300,7 +300,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					</li>
 				</ul>
 			</aside>
-		</>
+		</header>
 	);
 };
 
