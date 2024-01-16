@@ -6,36 +6,42 @@
 	font-family: 'futura_pt';
 	src: url('./assets/fonts/FuturaPT-Book.woff2');
 	font-weight: 400;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'futura_pt';
 	src: url('./assets/fonts/FuturaPT-Heavy.woff2');
 	font-weight: 600;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'proxima_nova';
 	src: url('./assets/fonts/Proxima-Nova-Sbold.woff2');
 	font-weight: 600;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'proxima_nova';
 	src: url('./assets/fonts/Proxima-Nova-Sbold.woff2');
 	font-weight: 500;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'proxima_nova';
 	src: url('./assets/fonts/ProximaNova-Medium.woff2');
 	font-weight: 400;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'proxima_nova';
 	src: url('./assets/fonts/ProximaNovaT-Thin.woff2');
 	font-weight: 100;
+	font-display: swap;
 }
 
 @font-face {
@@ -43,6 +49,7 @@
 	src: url('./assets/fonts/ProximaNova-RegularIt.woff2');
 	font-weight: 400;
 	font-style: italic;
+	font-display: swap;
 }
 
 .fade-in {
