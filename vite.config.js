@@ -68,5 +68,5 @@ const DEFAULT_OPTIONS = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), ViteImageOptimizer(DEFAULT_OPTIONS)],
+	plugins: [react()],
 });
