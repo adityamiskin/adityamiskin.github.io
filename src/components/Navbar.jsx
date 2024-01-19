@@ -185,7 +185,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 								<FaInstagram />
 							</a>
 							<a
-								href='https://www.linkedin.com/in/aditya-miskin/'
+								href='https://www.linkedin.com/in/adityamiskin'
 								aria-label='LinkedIn'
 								target='_blank'>
 								<FaLinkedinIn />

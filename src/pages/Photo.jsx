@@ -5,11 +5,32 @@ import { Link } from 'react-router-dom';
 const Photo = () => {
 	const [currentImage, setCurrentImage] = useState(0);
 	const images = [
-		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632731/test_hjtzaw.webp',
-		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632729/test7_fasrqt.webp',
-		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632729/test8_wethqp.webp',
-		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704632731/test3_yqykrt.webp',
-		'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2500/v1704633882/test4_xtagby.webp',
+		{
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704632731/test_hjtzaw.webp',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704632731/test_hjtzaw.webp',
+		},
+		{
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704632729/test7_fasrqt.webp',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704632729/test7_fasrqt.webp',
+		},
+
+		{
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704632729/test8_wethqp.webp',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704632729/test8_wethqp.webp',
+		},
+		{
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704632731/test3_yqykrt.webp',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704632731/test3_yqykrt.webp',
+		},
+		{
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704633882/test4_xtagby.webp',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704633882/test4_xtagby.webp',
+		},
 	];
 	const imageTypes = ['Street', 'Landscape', 'Nature', 'Portraits', 'Urban'];
 	const [isMouseLeft, setIsMouseLeft] = useState(false);
@@ -41,7 +62,7 @@ const Photo = () => {
 	}, []);
 
 	return (
-		<>
+		<section>
 			<div className='flex items-center justify-center overflow-hidden fixed top-1/2 w-full z-30'>
 				<h2 className='md:text-6xl text-5xl text-white text-center z-50 font-head font-semibold tracking-widest relative w-full'>
 					{imageTypes[currentImage]}
@@ -57,13 +78,17 @@ const Photo = () => {
 									'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%)',
 							}}
 							key={index}>
-							<img
-								src={image}
-								alt={`Image of ${imageTypes[currentImage]}`}
-								className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
-									currentImage === index ? 'opacity-100' : 'opacity-0'
-								}`}
-							/>
+							<picture>
+								<source media='(max-width: 600px)' srcSet={image.img_phone} />
+								<img
+									src={image.img}
+									srcSet=''
+									alt={`Image of ${imageTypes[currentImage]}`}
+									className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
+										currentImage === index ? 'opacity-100' : 'opacity-0'
+									}`}
+								/>
+							</picture>
 						</div>
 					))}
 				</Link>
@@ -89,7 +114,7 @@ const Photo = () => {
 					</div>
 				</Link>
 			</section>
-		</>
+		</section>
 	);
 };
 

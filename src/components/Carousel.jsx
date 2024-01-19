@@ -10,7 +10,7 @@ const Carousel = ({ slides }) => {
 	const [isMouseLeft, setIsMouseLeft] = useState(false);
 	const location = useLocation();
 
-	const gap = 8;
+	const gap = 16;
 
 	const nextSlide = () => {
 		let next = current === length - 1 ? 0 : current + 1;
@@ -75,30 +75,38 @@ const Carousel = ({ slides }) => {
 				<FaChevronRight className='text-lg text-white' />
 			</button>
 			<div
-				className='flex overflow-x-hidden md:gap-4 gap-8 relative md:absolute md:flex-row flex-col md:w-[20000px] w-full top-0 left-0 md:left-auto my-auto h-full items-center transition-all'
+				className='flex overflow-x-hidden md:gap-4 gap-8 relative md:absolute md:flex-row flex-col md:w-[20000px] w-full top-0 left-0 md:left-auto my-auto h-full items-center transition-all '
 				style={{
 					transform: `translateX(-${offset}px)`,
-					transition: 'transform 0.5s ease-in-out',
+					transition: 'transform 0.3s ease',
 				}}>
 				{slides.map((slide, index) => {
 					return (
 						<div
 							key={index}
-							className={` md:w-fit w-full transition-opacity duration-500 md:pt-10  ${
+							className={`md:w-fit w-full transition-opacity duration-500  ${
 								index === current - 1 ? 'opacity-0' : 'opacity-100'
-							}`}
+							} flex flex-col items-start`}
 							ref={(el) => (imageRefs.current[index] = el)}>
-							<img
-								src={slide}
-								alt={`Slide ${index + 1}`}
-								className='w-full md:h-[500px] 3xl:h-[800px] mb-3 z-40 transition-all'
-							/>
-							<p className='text-black mb-2 font-head font-semibold text-lg ml-4 md:ml-0 dark:text-white'>
-								Lorem ipsum dolor sit amet.
-							</p>
-							<p className='text-black mb-2 text-base ml-4 md:ml-0 dark:text-white'>
-								Lorem ipsum dolor, sit amet consectetur
-							</p>
+							<div className='relative'>
+								<picture>
+									<source media='(max-width: 600px)' srcSet={slide.img_phone} />
+									<img
+										src={slide.img}
+										alt={slide.description}
+										className='w-full md:h-[500px] 3xl:h-[800px] mb-3 z-40 transition-all object-contain'
+									/>
+								</picture>
+
+								<div className='md:absolute bottom-100 mx-auto px-4 md:px-0'>
+									<p className='text-black mb-2 font-head font-semibold text-lg md:ml-0 dark:text-white'>
+										{slide.title}
+									</p>
+									<p className='text-black mb-2 text-sm dark:text-white font-body tracking-wider text-wrap font-light md:pr-12'>
+										{slide.description}
+									</p>
+								</div>
+							</div>
 						</div>
 					);
 				})}

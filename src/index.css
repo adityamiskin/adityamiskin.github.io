@@ -39,8 +39,15 @@
 
 @font-face {
 	font-family: 'proxima_nova';
-	src: url('./assets/fonts/ProximaNovaT-Thin.woff2');
+	src: url('./assets/fonts/ProximaNova-Thin.woff2');
 	font-weight: 100;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'proxima_nova';
+	src: url('./assets/fonts/ProximaNova-Regular.woff2');
+	font-weight: 300;
 	font-display: swap;
 }
 

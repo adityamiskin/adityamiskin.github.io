@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // import Anya from '../assets/images/anya.png';
 
 const About = () => {
@@ -31,7 +30,7 @@ const About = () => {
 				</div>
 
 				<img
-					src='https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,h_1179/v1704632730/profile_bhu0aw.webp'
+					src='https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_600/v1704632730/profile_bhu0aw.webp'
 					alt='profile picture'
 					className='md:w-1/2 md:h-1/2 md:p-4 md:max-w-96 md:max-h-96 order-1 md:order-2 w-full h-full'
 				/>
