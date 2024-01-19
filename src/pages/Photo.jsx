@@ -6,12 +6,12 @@ const Photo = () => {
 	const [currentImage, setCurrentImage] = useState(0);
 	const images = [
 		{
-			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704632731/test_hjtzaw.webp',
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2000/v1704632731/test_hjtzaw.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704632731/test_hjtzaw.webp',
 		},
 		{
-			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704632729/test7_fasrqt.webp',
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_2000/v1704632729/test7_fasrqt.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_100,w_800/v1704632729/test7_fasrqt.webp',
 		},
@@ -78,17 +78,14 @@ const Photo = () => {
 									'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%)',
 							}}
 							key={index}>
-							<picture>
-								<source media='(max-width: 600px)' srcSet={image.img_phone} />
-								<img
-									src={image.img}
-									srcSet=''
-									alt={`Image of ${imageTypes[currentImage]}`}
-									className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
-										currentImage === index ? 'opacity-100' : 'opacity-0'
-									}`}
-								/>
-							</picture>
+							<img
+								src={image.img}
+								srcSet=''
+								alt={`Image of ${imageTypes[currentImage]}`}
+								className={`test-img w-full h-full object-cover fixed top-0 left-0 z-10 transition-all duration-500 ${
+									currentImage === index ? 'opacity-100' : 'opacity-0'
+								}`}
+							/>
 						</div>
 					))}
 				</Link>

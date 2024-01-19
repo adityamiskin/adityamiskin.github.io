@@ -37,7 +37,8 @@ const ListItem = ({ item, type }) => (
 		</span>
 		<h3 className='flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white'>
 			<Link className='flex gap-2 items-center' to={item.link}>
-				<span>{item.company || item.institution}</span> <FaShareFromSquare />
+				<span>{item.company || item.institution}</span>
+				<FaShareFromSquare className='w-4 h-4' />
 			</Link>
 			{item.position && (
 				<span className='bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3'>
@@ -89,7 +90,7 @@ const Work = () => {
 
 	const experiences = [
 		{
-			company: 'Carelon Global Solutions, Bengaluru',
+			company: 'Carelon Global Solutions',
 			link: 'https://www.carelonglobal.in/',
 			position: 'Associate Data Scientist',
 			duration: 'August 2023 - Present',
@@ -102,7 +103,7 @@ const Work = () => {
 			position: 'Lead Frontend Developer',
 			duration: 'October 2022 - June 2023',
 			description:
-				'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+				'Developed a fully responsive website for a 3D startup using React.',
 		},
 	];
 

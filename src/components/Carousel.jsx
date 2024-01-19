@@ -95,6 +95,8 @@ const Carousel = ({ slides }) => {
 										src={slide.img}
 										alt={slide.description}
 										className='w-full md:h-[500px] 3xl:h-[800px] mb-3 z-40 transition-all object-contain'
+										width={1000}
+										height={1500}
 									/>
 								</picture>
 
