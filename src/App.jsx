@@ -187,7 +187,8 @@ function App() {
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1000/v1704633882/test4_xtagby.webp',
 			title: 'Buddha Painting',
-			description: 'A painting of Buddha in Kasol. Taken on Fujifilm X-T30II.',
+			description:
+				'A painting of Buddha in Ajanta Caves. Taken on Fujifilm X-T30II.',
 		},
 		{
 			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1704647230/DSCF4684_2_amx9im.webp',
