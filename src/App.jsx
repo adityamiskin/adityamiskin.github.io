@@ -123,29 +123,30 @@ function App() {
 			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1697995106/IMG_4323_zyigit.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1000/v1697995106/IMG_4323_zyigit.webp',
-			title: 'Nature',
-			description: 'Nature photography',
+			title: 'Lush Green, Kasol',
+			description: 'A picture of forest in Kasol. Taken on Canon IXUS 120.',
 		},
 		{
 			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1697995154/IMG_20230627_181655_483_rpbovu.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1000/v1697995154/IMG_20230627_181655_483_rpbovu.webp',
-			title: 'Nature',
-			description: 'Nature photography',
+			title: 'Kheerganga Forest, Himachal Pradesh',
+			description: 'A picture of Kheerganga Forest in Himachal Pradesh.',
 		},
 		{
 			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_81,w_1500/v1697995135/IMG_20230627_161213_639_zijls5.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_81,w_800/v1697995135/IMG_20230627_161213_639_zijls5.webp',
-			title: 'Nature',
-			description: 'Nature photography',
+			title: 'Father and Son, Kheerganga Peak',
+			description: 'Couple of horses eating grass in Himachal Pradesh.',
 		},
 		{
 			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_82,w_1500/v1697995126/IMG_20230627_143518_831_1_hvndpw.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_82,w_800/v1697995126/IMG_20230627_143518_831_1_hvndpw.webp',
-			title: 'Nature',
-			description: 'Nature photography',
+			title: 'Sheep Herding, Sissu',
+			description:
+				'A bunch of sheep being herded in Sissu, Himachal Pradesh. Shot on Canon IXUS 120.',
 		},
 	];
 	const portraits = [
