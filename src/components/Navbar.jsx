@@ -73,14 +73,14 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						isScrolled ? 'text-white dark:text-black' : ''
 					}`}>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
-						<h1 className='tracking-widest font-head font-semibold'>
+						<h1 className='tracking-widest font-head font-semibold text-[38px]'>
 							ADITYA MISKIN
 						</h1>
 					</Link>
 				</div>
 
 				<div className={`${isScrolled ? ' text-white  dark:text-black' : ''}`}>
-					<ul className='flex gap-8 items-center tracking-wider text-base font-head'>
+					<ul className='flex gap-8 items-center tracking-wider text-[15px] font-head'>
 						<li>
 							<Link
 								to='/'
@@ -110,13 +110,13 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 								onMouseLeave={() => setSubmenuOpen(false)}>
 								<Link
 									to='/photo'
-									className={`link ${
-										activeLink === '/photo' ? 'active' : ''
+									className={`link flex ${
+										activeLink === '/photo' ? 'active !border-b-white' : ''
 									} underline-offset-2`}
 									onClick={() => {
 										handleClick('/photo');
 									}}>
-									+ Photo
+									+&nbsp;Photo
 								</Link>
 
 								{isSubmenuOpen && (
