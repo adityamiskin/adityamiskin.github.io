@@ -95,7 +95,7 @@ const Work = () => {
 			position: 'Associate Data Scientist',
 			duration: 'August 2023 - Present',
 			description:
-				'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+				'Working as an Associate Data Scientist specializing in Artificial Intelligence in Healthcare domain.',
 		},
 		{
 			company: 'Magnimus',
@@ -143,11 +143,14 @@ const Work = () => {
 			</div>
 
 			<h2 className='text-4xl font-head font-semibold mb-8'>Projects</h2>
-			<div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 md:gap-8 mb-12'>
+			{/* <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 md:gap-8 mb-12'>
 				{projects.map((project, index) => (
 					<Project key={index} project={project} />
 				))}
-			</div>
+			</div> */}
+			<h3 className='text-2xl font-semibold w-full'>
+				Under Development ＞﹏＜
+			</h3>
 		</section>
 	);
 };

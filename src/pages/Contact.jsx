@@ -26,7 +26,7 @@ const SOCIAL_MEDIA_LINKS = [
 		ariaLabel: 'Instagram',
 	},
 	{
-		url: 'https://www.linkedin.com/in/aditya-miskin/',
+		url: 'https://www.linkedin.com/in/adityamiskin/',
 		icon: <FaLinkedinIn />,
 		ariaLabel: 'LinkedIn',
 	},
@@ -160,9 +160,9 @@ const Contact = () => {
 			/>
 			<ToastContainer />
 			<p className='text-2xl font-head font-semibold mb-8 text-center mx-auto md:max-w-screen-md w-full'>
-				Available for various services including software freelance, product and
-				portrait photography. Contact for rates. Or, if you just wanna chat,
-				toss me a line!
+				Available for various services including frontend design, software
+				freelancing and MVP building. Contact for rates. Or, if you just wanna
+				chat, toss me a line!
 			</p>
 			<form
 				className='flex flex-col gap-3 mx-auto md:max-w-screen-sm w-full justify-center'
