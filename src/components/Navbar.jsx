@@ -173,7 +173,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 								<FaGithub />
 							</a>
 							<a
-								href='https://twitter.com/AdityaMiskin3'
+								href='https://twitter.com/ad1tyamiskin'
 								aria-label='Twitter'
 								target='_blank'>
 								<FaTwitter />

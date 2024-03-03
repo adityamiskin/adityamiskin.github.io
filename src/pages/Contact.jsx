@@ -16,7 +16,7 @@ const SOCIAL_MEDIA_LINKS = [
 		ariaLabel: 'Github',
 	},
 	{
-		url: 'https://twitter.com/AdityaMiskin3',
+		url: 'https://twitter.com/ad1tyamiskin',
 		icon: <FaTwitter />,
 		ariaLabel: 'Twitter',
 	},
