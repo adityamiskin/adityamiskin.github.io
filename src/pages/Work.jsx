@@ -119,9 +119,9 @@ const Work = () => {
 	];
 
 	return (
-		<section className='md:px-10 p-4 max-w-8xl mx-auto mb-10 mt-8 md:mt-40'>
-			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 md:px-0 mb-10'>
-				<div className='professional-exp'>
+		<section className='md:px-16 p-4 max-w-8xl mx-auto mb-10 mt-8 md:mt-40'>
+			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 md:px-0 mb-10 w-full'>
+				<div className='professional-exp w-full'>
 					<h2 className='text-4xl font-head font-semibold mb-8'>
 						Professional Experience
 					</h2>
@@ -132,7 +132,7 @@ const Work = () => {
 					</ol>
 				</div>
 
-				<div className='education'>
+				<div className='education w-full'>
 					<h2 className='text-4xl font-head font-semibold mb-8'>Education</h2>
 					<ol className='relative border-s border-gray-200 dark:border-gray-700 mb-8'>
 						{educations.map((education, index) => (
