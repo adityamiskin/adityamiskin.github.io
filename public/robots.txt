@@ -2,9 +2,6 @@ User-agent: *
 Allow: /
 
 User-agent: *
-Disallow: /photo/
-
-User-agent: *
 Disallow: /photo/portraits/
 
 User-agent: *
