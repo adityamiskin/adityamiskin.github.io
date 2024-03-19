@@ -4,4 +4,19 @@ Allow: /
 User-agent: *
 Disallow: /photo/
 
+User-agent: *
+Disallow: /photo/portraits/
+
+User-agent: *
+Disallow: /photo/landscapes/
+
+User-agent: *
+Disallow: /photo/urban/
+
+User-agent: *
+Disallow: /photo/street/
+
+User-agent: *
+Disallow: /photo/nature/
+
 Sitemap: https://adityamiskin.com/sitemap.xml
