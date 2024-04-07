@@ -148,6 +148,13 @@ function App() {
 			description:
 				'A bunch of sheep being herded in Sissu, Himachal Pradesh. Shot on Canon IXUS 120.',
 		},
+		{
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_82,w_1500/v1712488680/camfkh9yqk11k3cpss72.jpg',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_82,w_800/v1712488680/camfkh9yqk11k3cpss72.jpg',
+			title: 'Pretty Flowers, North Sikkim',
+			description:
+				'A tree with pretty pink flowers.',
 	];
 	const portraits = [
 		{
