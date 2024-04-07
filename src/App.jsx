@@ -87,6 +87,14 @@ function App() {
 			description: 'A snap of a cute house in Sissu.',
 		},
 		{
+			
+			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1712492588/nsef38tlas3myh0ildzv.jpg',
+			img_phone:
+				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1000/v1712492588/nsef38tlas3myh0ildzv.jpg',
+			title: 'Majestic Mountains, Katao',
+			description: 'Mt. Katao, Sikkim. Taken on Fujfilm X-T30II.',
+		},
+		{
 			img: 'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1500/v1697995112/IMG_20230626_204602_413_jfr8t7.webp',
 			img_phone:
 				'https://res.cloudinary.com/vite-img/image/upload/c_scale,q_80,w_1000/v1697995112/IMG_20230626_204602_413_jfr8t7.webp',
