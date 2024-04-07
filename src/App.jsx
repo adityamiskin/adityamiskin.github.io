@@ -155,6 +155,7 @@ function App() {
 			title: 'Pretty Flowers, North Sikkim',
 			description:
 				'A tree with pretty pink flowers.',
+		}
 	];
 	const portraits = [
 		{
