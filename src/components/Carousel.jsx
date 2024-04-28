@@ -78,7 +78,7 @@ const Carousel = ({ slides }) => {
 				className='flex overflow-x-hidden md:gap-4 gap-8 relative md:absolute md:flex-row flex-col md:w-[20000px] w-full top-0 left-0 md:left-auto my-auto h-full items-center transition-all '
 				style={{
 					transform: `translateX(-${offset}px)`,
-					transition: 'transform 0.3s ease',
+					transition: 'transform 0.35s ease',
 				}}>
 				{slides.map((slide, index) => {
 					return (

@@ -151,7 +151,7 @@ const Contact = () => {
 	};
 
 	return (
-		<section className='flex justify-center flex-col mb-20 p-4 md:mt-40'>
+		<section className='flex justify-center flex-col mb-20 p-4 md:mt-12'>
 			<SocialMediaLinks
 				isHovered={isHovered}
 				setIsHovered={setIsHovered}
@@ -159,13 +159,13 @@ const Contact = () => {
 				setActiveIndex={setActiveIndex}
 			/>
 			<ToastContainer />
-			<p className='text-2xl font-head font-semibold mb-8 text-center mx-auto md:max-w-screen-md w-full'>
+			<p className='text-2xl font-head font-semibold mb-8 text-center mx-auto md:max-w-screen-md w-full px-6'>
 				Available for various services including frontend design, software
 				freelancing and MVP building. Contact for rates. Or, if you just wanna
 				chat, toss me a line!
 			</p>
 			<form
-				className='flex flex-col gap-3 mx-auto md:max-w-screen-sm w-full justify-center'
+				className='flex flex-col gap-3 mx-auto md:max-w-screen-sm w-full justify-center px-6'
 				onSubmit={handleOnSubmit}>
 				<p className='text-sm text-left tracking-wider'>
 					Name <span className='text-xs opacity-70'>(required)</span>

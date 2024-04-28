@@ -8,11 +8,11 @@ import Annote from '../assets/images/projects/annote.jpg';
 const Project = ({ project }) => (
 	<a href='//www.github.com' target='_blank' rrel='noopener noreferrer'>
 		<div className='flex flex-col p-4 border border-black dark:border-white h-full'>
-			<img
+			{/* <img
 				src={project.image}
 				alt='project image'
 				className='object-cover mb-2'
-			/>
+			/> */}
 			<div className='flex gap-2 items-baseline'>
 				<h3 className='font-head font-semibold text-2xl mb-2'>
 					{project.name}
@@ -119,7 +119,7 @@ const Work = () => {
 	];
 
 	return (
-		<section className='md:px-16 p-4 max-w-8xl mx-auto mb-10 mt-8 md:mt-40'>
+		<section className='md:px-16 p-4 max-w-8xl mx-auto mb-10 mt-8'>
 			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 md:px-0 mb-10 w-full'>
 				<div className='professional-exp w-full'>
 					<h2 className='text-4xl font-head font-semibold mb-8'>
@@ -143,7 +143,7 @@ const Work = () => {
 			</div>
 
 			<h2 className='text-4xl font-head font-semibold mb-8'>Projects</h2>
-			{/* <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 md:gap-8 mb-12'>
+			{/* <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-10 md:gap-8 mb-12'>
 				{projects.map((project, index) => (
 					<Project key={index} project={project} />
 				))}

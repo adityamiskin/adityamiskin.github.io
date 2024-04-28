@@ -57,21 +57,19 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 	return (
 		<header>
 			<nav
-				className={`justify-between top-0 fixed items-center transition-all duration-250 w-full dark:text-white p-10 z-50 md:flex hidden max-w-8xl mx-auto ${
-					isScrolled
-						? 'bg-black text-white dark:bg-[#fbfbfb] dark:text-black'
-						: ''
-				} ${
+				className={`justify-between items-center transition-all duration-200 w-full dark:text-white p-8 z-50 md:flex hidden max-w-8xl mx-auto  ${
 					location.pathname === '/photo'
-						? 'text-white p-4 dark-hover'
+						? 'text-white py-2 px-4 dark-hover '
 						: location.pathname.startsWith('/photo/')
-						? 'text-black p-4'
-						: 'text-black'
+						? 'text-black py-2 px-4'
+						: 'text-black px-12'
+				} ${
+					location.pathname !== '/photo' &&
+					location.pathname.startsWith('/photo/')
+						? 'fixed top-0'
+						: 'relative'
 				}`}>
-				<div
-					className={`text-4xl ${
-						isScrolled ? 'text-white dark:text-black' : ''
-					}`}>
+				<div>
 					<Link to='/' className='' onClick={() => handleClick('/')}>
 						<h1 className='tracking-widest font-head font-semibold text-[38px]'>
 							ADITYA MISKIN
@@ -79,8 +77,8 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					</Link>
 				</div>
 
-				<div className={`${isScrolled ? ' text-white  dark:text-black' : ''}`}>
-					<ul className='flex gap-8 items-center tracking-wider text-[15px] font-head'>
+				<div>
+					<ul className='flex gap-8 items-center tracking-widest text-[15px] font-head'>
 						<li>
 							<Link
 								to='/'
@@ -120,7 +118,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 								</Link>
 
 								{isSubmenuOpen && (
-									<ul className='absolute flex flex-col p-6 text-sm w-36 gap-4 left-[-35px] mt-2 bg-black text-white border-t-2 border-transparent dark:bg-[#fbfbfb] dark:text-black'>
+									<ul className='absolute flex flex-col p-4 px-5 text-[13px] w-36 gap-4 left-[-35px] mt-2 bg-black text-white border-t-2 border-transparent dark:bg-[#fbfbfb] dark:text-black'>
 										{imageTypes.map((type) => (
 											<li key={type}>
 												<Link
