@@ -140,7 +140,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: proxima_nova, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	color: #111111;
+	color: #080808;
 	background-color: #fbfbfb;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -164,7 +164,7 @@ body {
 }
 
 .dark {
-	background-color: black;
+	background-color: #080808;
 	color: white;
 
 	.link-text {

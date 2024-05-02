@@ -4,12 +4,13 @@ import Navbar from '@/components/Navbar';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Photo from '@/pages/Photo';
-import Blog from '@/pages/Blog';
+import Blogs from '@/pages/Blogs';
 import Work from '@/pages/Work';
 import Spinner from '@/components/Spinner';
 import AnimatedCursor from 'react-animated-cursor';
 import NotFound from '@/pages/NotFound';
 import { lazy, Suspense } from 'react';
+import Blog from './pages/Blog';
 
 function App() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -231,6 +232,29 @@ function App() {
 		},
 	];
 
+	const blogs = [
+		{
+			title: 'Playing For Keeps',
+			markdown: '@/assets/blog/playing-for-keeps.mdx',
+		},
+		{
+			title: 'Goody Two-Shoes',
+			markdown: '@/assets/blog/goody-two-shoes.mdx',
+		},
+		{
+			title: 'Head Over Heels',
+			markdown: '@/assets/blog/head-over-heels.mdx',
+		},
+		{
+			title: 'What Am I, Chopped Liver?',
+			markdown: '@/assets/blog/what-am-i-chopped-liver.mdx',
+		},
+		{
+			title: 'Birds of a Feather Flock Together',
+			markdown: '@/assets/blog/birds-of-a-feather-flock-together.mdx',
+		},
+	];
+
 	const carouselImages = [street, landscape, nature, portraits, urban];
 
 	return (
@@ -256,8 +280,6 @@ function App() {
 				<Route path='/' element={<About />} />
 				<Route path='/contact' element={<Contact />} />
 				<Route path='/photo' element={<Photo />} />
-				<Route path='/work' element={<Work />} />
-				<Route path='/blog' element={<Blog />} />
 				{imageTypes.map((type, index) => (
 					<Route
 						key={type}
@@ -269,6 +291,15 @@ function App() {
 						}
 					/>
 				))}
+				<Route path='/work' element={<Work />} />
+				<Route path='/blog' element={<Blogs />} />
+				{/* {blogs.map((blog) => (
+					<Route
+						key={blog.title}
+						path={`/blog/${blog.title.replace(/\s+/g, '-').toLowerCase()}`}
+						element={<Blog markdown={blog.markdown} />}
+					/>
+				))} */}
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>

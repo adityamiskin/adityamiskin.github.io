@@ -12,7 +12,7 @@ const Project = ({ project }) => (
 		href={project.link}
 		target='_blank'
 		rrel='noopener noreferrer'
-		className='relative w-[22rem] z-10 overflow-visible group md:snap-center snap-start'>
+		className='relative w-[22rem] z-10 overflow-visible group md:snap-center snap-start snap-always'>
 		<div className='flex md:w-[22rem] md:h-[30rem] w-[16rem] h-[22rem] group overflow-hidden rounded-md '>
 			<img
 				src={project.image}
@@ -197,7 +197,7 @@ const Work = () => {
 			<div>
 				<div className='flex items-center justify-between md:px-16 px-4'>
 					<h2 className='text-4xl font-head font-semibold mb-4'>Projects</h2>
-					{/* <div className='flex gap-6'>
+					<div className='flex gap-6'>
 						<button
 							onClick={() => scroll(-300)}
 							className={`transform transition duration-300 ${
@@ -216,13 +216,13 @@ const Work = () => {
 							style={{ opacity: scrollPosition >= maxScrollWidth ? 0.5 : 1 }}>
 							<FaChevronRight />
 						</button>
-					</div> */}
+					</div>
 				</div>
 
 				{/* <div className='w-full'>
 					<div
 						ref={scrollContainer}
-						className='flex overflow-x-scroll snap-x snap-proximity scroll-smooth hide-scrollbar px-4 space-x-3 md:px-16 ml-4 md:ml-0'>
+						className='flex overflow-x-scroll snap-x snap-mandatory scroll-smooth hide-scrollbar px-4 space-x-3 md:px-16 ml-4 md:ml-0'>
 						{projects.map((project, index) => (
 							<Project key={index} project={project} />
 						))}
