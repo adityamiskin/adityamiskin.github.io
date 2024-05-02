@@ -102,6 +102,17 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 						</li>
 
 						<li>
+							<Link
+								to='/blog'
+								className={`link ${
+									activeLink === '/blog' ? 'active' : ''
+								} underline-offset-2`}
+								onClick={() => handleClick('/')}>
+								Blog
+							</Link>
+						</li>
+
+						<li>
 							<div
 								className={`relative extra ${isSubmenuOpen ? 'open' : ''}`}
 								onMouseEnter={() => setSubmenuOpen(true)}
@@ -243,7 +254,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					navbarOpen ? 'translate-x-0' : 'translate-x-full'
 				}`}>
 				<ul
-					className='flex flex-col gap-8 tracking-wider text-lg font-head'
+					className='flex flex-col gap-6 tracking-wider text-lg font-head'
 					style={{ width: 'fit-content' }}>
 					<li>
 						<Link to='/' className={`link ml-3`} onClick={handleClick}>
@@ -258,10 +269,16 @@ const Navbar = ({ navbarOpen, setNavbarOpen }) => {
 					</li>
 
 					<li>
+						<Link to='/blog' className={`link ml-3`} onClick={handleClick}>
+							Blog
+						</Link>
+					</li>
+
+					<li>
 						<Link to='/photo' className='link' onClick={handleClick}>
 							+ Photo
 						</Link>
-						<ul className='ml-8 flex flex-col gap-3 mt-3'>
+						<ul className='ml-8 flex flex-col gap-2 mt-3'>
 							{imageTypes.map((type) => (
 								<li key={type}>
 									<Link

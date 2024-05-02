@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Photo from './pages/Photo';
+import Navbar from '@/components/Navbar';
+import About from '@/pages/About';
+import Contact from '@/pages/Contact';
+import Photo from '@/pages/Photo';
+import Blog from '@/pages/Blog';
+import Work from '@/pages/Work';
+import Spinner from '@/components/Spinner';
 import AnimatedCursor from 'react-animated-cursor';
-import Work from './pages/Work';
-import NotFound from './pages/NotFound';
+import NotFound from '@/pages/NotFound';
 import { lazy, Suspense } from 'react';
-import Spinner from './components/Spinner';
 
 function App() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -256,6 +257,7 @@ function App() {
 				<Route path='/contact' element={<Contact />} />
 				<Route path='/photo' element={<Photo />} />
 				<Route path='/work' element={<Work />} />
+				<Route path='/blog' element={<Blog />} />
 				{imageTypes.map((type, index) => (
 					<Route
 						key={type}

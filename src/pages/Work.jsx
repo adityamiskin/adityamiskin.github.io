@@ -1,27 +1,27 @@
 import { FaSchool, FaBriefcase, FaShareFromSquare } from 'react-icons/fa6';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from 'react';
 import DataViz from '../assets/images/projects/dataviz.png';
 import Subtitle from '../assets/images/projects/subtitle.jpg';
 import CLI from '../assets/images/projects/cli.jpg';
 import Annote from '../assets/images/projects/annote.jpg';
 
 const Project = ({ project }) => (
-	<a href='//www.github.com' target='_blank' rrel='noopener noreferrer'>
-		<div className='flex flex-col p-4 border border-black dark:border-white h-full'>
-			{/* <img
+	<a
+		href={project.link}
+		target='_blank'
+		rrel='noopener noreferrer'
+		className='relative w-[22rem] z-10 overflow-visible group md:snap-center snap-start'>
+		<div className='flex md:w-[22rem] md:h-[30rem] w-[16rem] h-[22rem] group overflow-hidden rounded-md '>
+			<img
 				src={project.image}
-				alt='project image'
-				className='object-cover mb-2'
-			/> */}
-			<div className='flex gap-2 items-baseline'>
-				<h3 className='font-head font-semibold text-2xl mb-2'>
-					{project.name}
-				</h3>
-				<p className='text-xs text-gray-600 dark:text-gray-400'>
-					({project.techStack})
-				</p>
-			</div>
-			<p className='project-desc text-sm'>{project.description}</p>
+				className='w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 object-cover'
+			/>
+		</div>
+		<div className='flex flex-col p-4 dark:border-white absolute top-0 justify-between h-full z-20'>
+			<p className='font-medium text-sm mb-2'>{project.name}</p>
+			<p className='project-desc text-lg'>{project.description}</p>
 		</div>
 	</a>
 );
@@ -64,27 +64,51 @@ const Work = () => {
 				'A powerful AI tool for visualizing and analyzing complex data sets.',
 			techStack: 'React, AI',
 			image: DataViz,
+			link: 'https://www.github.com',
 		},
 		{
 			name: 'AI Subtitle Generator',
 			description:
 				'An AI-powered tool that generates subtitles with timestamps for videos.',
 			techStack: 'React, AI',
-			image: Subtitle,
+			image:
+				'https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg',
+			link: 'https://www.github.com',
 		},
 		{
 			name: 'ML Preprocessor CLI',
-			description:
-				'A command-line interface for preprocessing machine learning datasets.',
+			description: 'A CLI for preprocessing machine learning datasets.',
 			techStack: 'CLI, Machine Learning',
-			image: CLI,
+			image:
+				'https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg',
+			link: 'https://www.github.com',
 		},
 		{
 			name: 'Image Annotation Tool',
 			description:
 				'A tool for annotating images with bounding boxes and labels.',
 			techStack: 'HTML, CSS, Flask, Tessaract',
-			image: Annote,
+			image:
+				'https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg',
+			link: 'https://www.github.com',
+		},
+		{
+			name: 'AI Chatbot',
+			description:
+				'A chatbot that uses machine learning to provide human-like responses.',
+			techStack: 'Python, AI',
+			image:
+				'https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg',
+			link: 'https://www.github.com',
+		},
+		{
+			name: 'Data Visualization AI',
+			description:
+				'A powerful AI tool for visualizing and analyzing complex data sets.',
+			techStack: 'React, AI',
+			image:
+				'https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg',
+			link: 'https://www.github.com',
 		},
 	];
 
@@ -118,9 +142,37 @@ const Work = () => {
 		},
 	];
 
+	const scrollContainer = useRef(null);
+	const [scrollPosition, setScrollPosition] = useState(0);
+	const [maxScrollWidth, setMaxScrollWidth] = useState(0);
+
+	// useEffect(() => {
+	// 	const updateMaxScrollWidth = () => {
+	// 		setMaxScrollWidth(
+	// 			scrollContainer.current.scrollWidth -
+	// 				scrollContainer.current.clientWidth,
+	// 		);
+	// 	};
+
+	// 	updateMaxScrollWidth();
+	// 	window.addEventListener('resize', updateMaxScrollWidth);
+
+	// 	return () => window.removeEventListener('resize', updateMaxScrollWidth);
+	// }, []);
+
+	// const scroll = (scrollOffset) => {
+	// 	const newScrollPosition = scrollPosition + scrollOffset;
+	// 	setScrollPosition(newScrollPosition);
+	// 	scrollContainer.current.scrollBy({
+	// 		top: 0,
+	// 		left: scrollOffset,
+	// 		behavior: 'smooth',
+	// 	});
+	// };
+
 	return (
-		<section className='md:px-16 p-4 max-w-8xl mx-auto mb-10 mt-8'>
-			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 md:px-0 mb-10 w-full'>
+		<section className='max-w-8xl mx-auto pb-20 mt-8'>
+			<div className='flex md:gap-11 gap-4 flex-col md:flex-row px-4 mb-10 w-full md:px-16 '>
 				<div className='professional-exp w-full'>
 					<h2 className='text-4xl font-head font-semibold mb-8'>
 						Professional Experience
@@ -142,13 +194,43 @@ const Work = () => {
 				</div>
 			</div>
 
-			<h2 className='text-4xl font-head font-semibold mb-8'>Projects</h2>
-			{/* <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-10 md:gap-8 mb-12'>
-				{projects.map((project, index) => (
-					<Project key={index} project={project} />
-				))}
-			</div> */}
-			<h3 className='text-2xl font-semibold w-full'>
+			<div>
+				<div className='flex items-center justify-between md:px-16 px-4'>
+					<h2 className='text-4xl font-head font-semibold mb-4'>Projects</h2>
+					{/* <div className='flex gap-6'>
+						<button
+							onClick={() => scroll(-300)}
+							className={`transform transition duration-300 ${
+								scrollPosition > 0 ? 'hover:-translate-x-1' : ''
+							}`}
+							disabled={scrollPosition <= 0}
+							style={{ opacity: scrollPosition <= 0 ? 0.5 : 1 }}>
+							<FaChevronLeft />
+						</button>
+						<button
+							onClick={() => scroll(300)}
+							className={`transform transition duration-300 ${
+								scrollPosition < maxScrollWidth ? 'hover:translate-x-1' : ''
+							}`}
+							disabled={scrollPosition >= maxScrollWidth}
+							style={{ opacity: scrollPosition >= maxScrollWidth ? 0.5 : 1 }}>
+							<FaChevronRight />
+						</button>
+					</div> */}
+				</div>
+
+				{/* <div className='w-full'>
+					<div
+						ref={scrollContainer}
+						className='flex overflow-x-scroll snap-x snap-proximity scroll-smooth hide-scrollbar px-4 space-x-3 md:px-16 ml-4 md:ml-0'>
+						{projects.map((project, index) => (
+							<Project key={index} project={project} />
+						))}
+					</div>
+				</div> */}
+			</div>
+
+			<h3 className='text-2xl font-semibold w-full md:px-16 px-4'>
 				Under Development ＞﹏＜
 			</h3>
 		</section>
